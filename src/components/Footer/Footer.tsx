@@ -6,7 +6,9 @@ import { FaRss } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="sm:flex sm:w-[1920px] sm:h-[250px] w-[375px] h-[290px] bg-slate-900">
+    <div className="sm:flex sm:h-[250px] h-[290px] bg-slate-900">
+      {/* <div className="sm:flex sm:w-[1920px] sm:h-[250px] w-[375px] h-[290px] bg-slate-900"> */}
+      {/* <div className=""> */}
       <div className="sm:mr-[188px] mr-[94px]">
         <img
           className="sm:ml-[448px] ml-[154px] sm:pt-[79px] pt-[20px] sm:mb-[41px] mb-[7px]"
