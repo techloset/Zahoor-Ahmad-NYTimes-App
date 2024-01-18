@@ -22,17 +22,15 @@ export default function TopStory({
   imageAlternative,
 }: NewsProps) {
   return (
-    <div className="min-h-[500px] flex sm:gap-[76px]">
-      <a href={url} target="_blank">
-        <img
-          className="sm:w-750px sm:h-[500px]"
-          src={imageSource}
-          alt={imageAlternative}
-        />
-      </a>
+    <div className="min-h-[500px] flex sm:gap-[76px] mt-[32px] ">
+      <div className="sm:max-w-750px sm:min-w-750px sm:max-h-[500px] overflow-hidden">
+        <img src={imageSource} alt={imageAlternative} />
+      </div>
       <div>
-        <div className="flex justify-between">
-          <p>Trending</p>
+        <div className="flex justify-between mt-[90px]">
+          <p className="text-red-700 text-sm font-semibold font-Poppins leading-[29.40px] tracking-tight">
+            Trending
+          </p>
           <div className="flex sm:gap-[20px]">
             <IoHeartOutline />
             <GoShare />
@@ -40,16 +38,18 @@ export default function TopStory({
           </div>
         </div>
         <div>
-          <h3 className="sm:w-[540px] sm:h-[123px] text-zinc-800 sm:text-[32px] font-semibold font-['IBM Plex Serif']">
-            {headline}
-          </h3>
+          <a href={url} target="_blank">
+            <h3 className="sm:w-[540px] text-zinc-800 sm:text-[32px] font-semibold font-IBM">
+              {headline}
+            </h3>
+          </a>
           <p className="sm:w-[500px] sm:h-[94px] text-zinc-800 sm:text-[15px] font-normal font-Poppins leading-normal">
             {description}
           </p>
         </div>
-        <div className="flex sm:gap-[9px]">
-          <p className="sm:w-[94px] h-5 text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snu">
-            {pubishedAt}
+        <div className="flex sm:gap-[9px] mt-[30px]">
+          <p className="h-5 text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snu ">
+            {pubishedAt}{" "}
           </p>
           <p className="sm:h-5 opacity-70 text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snug">
             {byLine}
