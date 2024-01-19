@@ -1,3 +1,4 @@
+import axios from "axios";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import BreakingNewsAlert from "./components/News/BreakingNewsAlert";
@@ -11,13 +12,18 @@ export default function App() {
 
   useEffect(() => {
     const getNews = async () => {
-      const response = await fetch(
-        "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=g5w08PXd2Id8U1hqCGztsUCeqtqJzAKh"
-      );
-      const data = await response.json();
-      console.log(data.results);
-      setNews(data.results);
+      try {
+        const response = await axios.get(
+          "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=g5w08PXd2Id8U1hqCGztsUCeqtqJzAKh"
+        );
+        const data = response.data;
+        console.log(data.results);
+        setNews(data.results);
+      } catch (error) {
+        console.error("Error fetching news:", error);
+      }
     };
+
     getNews();
   }, []);
 
