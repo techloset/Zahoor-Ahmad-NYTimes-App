@@ -4,8 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "Nunito Sans": ["sans-serif"],
-        Poppins: ["sans-serif"],
+        Nunito: ["Nunito Sans", "sans-serif"],
+        Poppins: ["Poppins", "sans-serif"],
+        IBM: ["IBM Plex Serif", "serif"],
       },
     },
   },
