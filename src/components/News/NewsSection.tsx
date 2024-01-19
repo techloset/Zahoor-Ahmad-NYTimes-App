@@ -1,38 +1,6 @@
-import { useEffect, useState } from "react";
 import NewsCard from "./NewsCard";
 
-interface ArticleProps {
-  _id: string;
-  abstract: string;
-  byLine: {
-    original: string;
-  };
-  headline: {
-    main: string;
-  };
-  lead_paragraph: string;
-  web_url: string;
-  multimedia: {
-    url: string;
-  };
-  pub_date: string;
-}
 export default function NewsSection() {
-  const [articles, setArticles] = useState<ArticleProps[]>([]);
-  useEffect(() => {
-    console.log("NewsSection");
-    const fetchNews = async () => {
-      const response = await fetch(
-        // `https://api.nytimes.com/svc/archive/v1/2024/1.json?api-key=g5w08PXd2Id8U1hqCGztsUCeqtqJzAKh`
-        "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=g5w08PXd2Id8U1hqCGztsUCeqtqJzAKh"
-        //`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=${process.env.API_KEY}}`
-      );
-      const data = await response.json();
-      console.log(data.response.docs);
-      setArticles(data.response.docs);
-    };
-    fetchNews();
-  }, []);
   return (
     <div className="sm:max-w-[1920px] sm:mx-0 mx-[16px] ">
       <h3 className="font-bold text-3xl text-center">News Section</h3>

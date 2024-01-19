@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div>
       <Navbar />
-      <div className="sm:mx-[277px] sm:max-w-[1920px] flex sm:gap-[50px] flex-col items-center">
+      <div className="sm:mx-72 sm:max-w-8xl flex sm:gap-12 flex-col items-center">
         <TopStory
           _id="01"
           byLine="Zahoor Ahmad"
