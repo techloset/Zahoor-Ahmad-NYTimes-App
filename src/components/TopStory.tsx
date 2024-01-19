@@ -23,11 +23,11 @@ export default function TopStory({
 }: NewsProps) {
   return (
     <div className="min-h-[500px] flex sm:gap-[76px] mt-[32px] ">
-      <div className="sm:max-w-750px sm:min-w-750px sm:max-h-[500px] overflow-hidden">
-        <img src={imageSource} alt={imageAlternative} />
+      <div className="sm:max-w-[750px] sm:max-h-[500px] overflow-hidden">
+        <img src={imageSource} alt={imageAlternative} className="cover" />
       </div>
       <div>
-        <div className="flex justify-between mt-[90px]">
+        <div className="sm:flex sm:justify-between sm:mt-[90px] hidden">
           <p className="text-red-700 text-sm font-semibold font-Poppins leading-[29.40px] tracking-tight">
             Trending
           </p>
@@ -38,16 +38,18 @@ export default function TopStory({
           </div>
         </div>
         <div>
-          <a href={url} target="_blank">
-            <h3 className="sm:w-[540px] text-zinc-800 sm:text-[32px] font-semibold font-IBM">
-              {headline}
-            </h3>
-          </a>
-          <p className="sm:w-[500px] sm:h-[94px] text-zinc-800 sm:text-[15px] font-normal font-Poppins leading-normal">
+          <div>
+            <a href={url} target="_blank">
+              <h3 className="sm:w-[540px] text-zinc-800 sm:text-[32px] font-semibold font-IBM">
+                {headline}
+              </h3>
+            </a>
+          </div>
+          <p className="sm:w-[500px] sm:h-[94px] text-zinc-800 sm:text-[15px] font-normal font-Poppins leading-normal sm:block hidden">
             {description}
           </p>
         </div>
-        <div className="flex sm:gap-[9px] mt-[30px]">
+        <div className="sm:flex hidden sm:gap-[9px] mt-[30px]">
           <p className="h-5 text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snu ">
             {pubishedAt}{" "}
           </p>
