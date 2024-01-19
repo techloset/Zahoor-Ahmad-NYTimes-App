@@ -6,8 +6,8 @@ import { TfiAngleDoubleRight } from "react-icons/tfi";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-center  bg-white bg-opacity-90 backdrop-blur-[28px] ">
-      <div className="font-Nunito text-[16px] sm:w-[1920px] sm:h-20">
+    <div className="flex justify-center bg-white bg-opacity-90 backdrop-blur-[28px] ">
+      <div className="font-Nunito text-[16px] w-full sm:h-20">
         <nav className="sm:mx-[295px] mx-[24px] flex h-[80px] my-[14px] items-center justify-center">
           <img
             className="mr-[136px] sm:h-[52px] sm:w-[62.79px] h-[40px] w-[49.33px]"
