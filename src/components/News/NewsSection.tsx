@@ -14,17 +14,19 @@ export interface TopNews {
 
 export default function NewsSection() {
   const [articles, setArticles] = useState<TopNews[]>([]);
-  const totalArticles = articles.length;
+  // const totalArticles = articles.length;
   useEffect(() => {
     const getNews = async () => {
       try {
         const response = await axios.get(
-          "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=g5w08PXd2Id8U1hqCGztsUCeqtqJzAKh"
-          // `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.API_KEY}`
+          `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${
+            import.meta.env.VITE_API_KEY
+          }`
         );
         const data = response.data;
         console.log(data.results);
-        setArticles(data.results.slice(1, totalArticles));
+        setArticles(data.results);
+        // setArticles(data.results.slice(1, totalArticles));
       } catch (error) {
         console.error("Error fetching news:", error);
       }
