@@ -25,7 +25,7 @@ const NewsCard = ({
         </div>
       </a>
       <div>
-        <div className="flex flex-col sm:gap-[17px] sm:mb-[30px] sm:px-[25px] px-[19px] py-[10px]">
+        <div className="flex flex-col sm:gap-[17px] sm:mb-[15px] sm:px-[25px] px-[19px] py-[10px]">
           <h3 className="sm:w-[388px] sm:h-[45px] text-lg text-zinc-800 sm:text-lg font-semibold font-IBM leading-[27px] overflow-x-clip">
             {headline}
           </h3>
@@ -33,7 +33,7 @@ const NewsCard = ({
             {description}
           </p>
         </div>
-        <div className="flex sm:gap-[9px] ml-[26px] mb-[10px] gap-1 ">
+        <div className="flex sm:gap-[9px] ml-[26px] mb-[20px] gap-1 ">
           <p className="sm:w-[94px] h-5 text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snu">
             {pubishedAt}
           </p>
