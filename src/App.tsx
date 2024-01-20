@@ -1,10 +1,11 @@
 import axios from "axios";
-import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/Navbar";
-import BreakingNewsAlert from "./components/News/BreakingNewsAlert";
-import NewsSection, { TopNews } from "./components/News/NewsSection";
+import Footer from "./components/footer/Footer";
+import Navbar from "./components/navbar/Navbar";
+import BreakingNewsAlert from "./components/news/BreakingNewsAlert";
+import NewsSection, { TopNews } from "./components/news/NewsSection";
 import TopStory from "./components/TopStory";
 import { useEffect, useState } from "react";
+// import SearchComponent from "./components/News/SearchComponent";
 
 export default function App() {
   const [news, setNews] = useState<TopNews[]>([]);
@@ -14,7 +15,9 @@ export default function App() {
     const getNews = async () => {
       try {
         const response = await axios.get(
-          "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=g5w08PXd2Id8U1hqCGztsUCeqtqJzAKh"
+          `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${
+            import.meta.env.VITE_API_KEY
+          }`
         );
         const data = response.data;
         console.log(data.results);
@@ -23,14 +26,14 @@ export default function App() {
         console.error("Error fetching news:", error);
       }
     };
-
     getNews();
   }, []);
 
   return (
     <div className="flex items-center justify-center flex-col">
       <Navbar />
-      <div className="md:mx-[277px] sm:mx-[100px] mx-[24px] max-w-[1920px] flex sm:gap-[50px] flex-col items-center">
+      <div className="md:mx-[277px] sm:mx-[100px] max-w-[1920px] flex sm:gap-[50px] flex-col items-center">
+        {/* <SearchComponent /> */}
         <TopStory
           _id={topNews?._id}
           byLine={topNews?.byline}

@@ -14,29 +14,32 @@ export interface TopNews {
 
 export default function NewsSection() {
   const [articles, setArticles] = useState<TopNews[]>([]);
-  const totalArticles = articles.length;
+  const length = articles.length;
+  const [totalArticles, setTotalArticles] = useState<TopNews[]>([]);
   useEffect(() => {
     const getNews = async () => {
       try {
         const response = await axios.get(
-          "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=g5w08PXd2Id8U1hqCGztsUCeqtqJzAKh"
-          // `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.API_KEY}`
+          `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${
+            import.meta.env.VITE_API_KEY
+          }`
         );
         const data = response.data;
         console.log(data.results);
-        setArticles(data.results.slice(1, totalArticles));
+        setArticles(data.results);
+        setTotalArticles(articles.slice(1, length));
       } catch (error) {
         console.error("Error fetching news:", error);
       }
     };
     getNews();
-  }, []);
+  }, [articles, length]);
 
   return (
     <div className="sm:max-w-[1920px] sm:mx-0 mx-[16px] sm:mb-[50px]">
       <h3 className="font-bold text-3xl text-center">News Section</h3>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-[26px] gap-[16px]">
-        {articles.map((article) => (
+        {totalArticles.map((article) => (
           <NewsCard
             _id={article._id}
             byLine={article.byline}
