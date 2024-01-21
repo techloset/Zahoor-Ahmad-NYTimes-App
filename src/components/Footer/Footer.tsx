@@ -6,9 +6,8 @@ import { FaRss } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="sm:flex  w-full sm:h-[250px] h-[290px] bg-slate-900">
+    <footer className="sm:flex  w-full sm:h-[250px] h-[290px] bg-slate-900 mb-0">
       {/* <div className="sm:flex sm:w-[1920px] sm:h-[250px] w-[375px] h-[290px] bg-slate-900"> */}
-      {/* <div className=""> */}
 
       <div className="sm:mr-[188px] mr-[94px]">
         <img
@@ -30,14 +29,14 @@ const Footer = () => {
           <li>nbcnews.com Site Map</li>
         </ul>
       </div>
-      <div className="text-center text-white text-[15px] font-medium font-['Poppins'] leading-loose tracking-tight mr-[392px] sm:mt-[80px] mt-[0px]">
-        <ul className="flex sm:gap-6 gap-[px] flex-col sm:flex-row sm:ml-[px] ml-[152px]">
+      <div className="justify-center text-white text-[15px] font-medium font-['Poppins'] leading-loose tracking-tight mr-[392px] sm:mt-[80px] mt-[0px]">
+        <ul className="flex sm:gap-6 flex-col sm:flex-row min-w-full text-center">
           <li>About</li>
           <li>Contact</li>
           <li>Careers</li>
           <li>Coupons</li>
         </ul>
-        <div className="flex gap-[51.43px] sm:mt-[30px] justify-end">
+        <div className="flex gap-[51.43px] sm:mt-[30px] sm:justify-end">
           <FaRss className="w-7 h-7" />
           <FaTwitter className="w-[29.04px] h-6" />
           <FaRedditAlien className="w-[24.47px] h-[27.43px]" />
