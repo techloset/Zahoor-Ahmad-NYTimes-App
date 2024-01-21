@@ -1,8 +1,8 @@
 import axios from "axios";
-import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/Navbar";
-import BreakingNewsAlert from "./components/News/BreakingNewsAlert";
-import NewsSection, { TopNews } from "./components/News/NewsSection";
+import Footer from "./components/footer/Footer";
+import Navbar from "./components/navbar/Navbar";
+import BreakingNewsAlert from "./components/news/BreakingNewsAlert";
+import NewsSection, { TopNews } from "./components/news/NewsSection";
 import TopStory from "./components/TopStory";
 import { useEffect, useState } from "react";
 
