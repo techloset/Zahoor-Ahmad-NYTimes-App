@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import TopNews from "./interfaces/TopNews";
 import axios from "axios";
-import Navbar from "./components/navbar/Navbar";
-import TopStory from "./components/TopStory";
-import BreakingNewsAlert from "./components/news/BreakingNewsAlert";
-import NewsSection from "./components/news/NewsSection";
-import Footer from "./components/footer/Footer";
+import Navbar from "./components/navbar/Navbar.tsx";
+import TopStory from "./components/TopStory.tsx";
+import BreakingNewsAlert from "./components/news/BreakingNewsAlert.tsx";
+import NewsSection from "./components/news/NewsSection.tsx";
+import Footer from "./components/footer/Footer.tsx";
 
 export default function App() {
   const [news, setNews] = useState<TopNews[]>([]);
