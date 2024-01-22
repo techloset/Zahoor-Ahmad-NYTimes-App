@@ -14,7 +14,7 @@ export default function App() {
           byLine="Zahoor Ahmad"
           headline="Cake meme reflects coronavirus absurdity in a world where nothing is what it seems"
           description="Earlier this month, a viral video depicting hyper-realistic cakes as everyday items had folks on social media double-guessing every other post, and sometimes even their own realities, effectively launching the next meme : “Is this real or is this cake?”"
-          imageSource="https://www.nytimes.com/images/2024/01/05/arts/05lythgoe-resigns/05lythgoe-resigns-articleLarge.jpg"
+          imageSource="https://static01.nyt.com/images/2024/01/18/multimedia/18iran-missiles-02-hzvj/18iran-missiles-02-hzvj-superJumbo.jpg"
           imageAlternative="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, quos?"
           key={1}
           pubishedAt="2024-1-4"
