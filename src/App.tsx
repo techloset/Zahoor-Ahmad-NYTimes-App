@@ -1,33 +1,20 @@
-import { useEffect, useState } from "react";
-import TopNews from "./interfaces/TopNews";
-import axios from "axios";
-import Navbar from "./components/navbar/Navbar.tsx";
-import TopStory from "./components/TopStory.tsx";
-import BreakingNewsAlert from "./components/news/BreakingNewsAlert.tsx";
-import NewsSection from "./components/news/NewsSection.tsx";
-import Footer from "./components/footer/Footer.tsx";
+import { useEffect } from "react";
+import Navbar from "./components/navbar/Navbar";
+import TopStory from "./components/TopStory";
+import BreakingNewsAlert from "./components/news/BreakingNewsAlert";
+import NewsSection from "./components/news/NewsSection";
+import Footer from "./components/footer/Footer";
+import { useAppDispatch, useAppSelector } from "./App/hooks";
+import { RootState } from "./App/store";
+import { fetchArticles } from "./features/news/newsSlice";
 
 export default function App() {
-  const [news, setNews] = useState<TopNews[]>([]);
-  const topNews = news[0];
-
+  const { articles } = useAppSelector((state: RootState) => state.news);
+  const dispatch = useAppDispatch();
+  const topNews = articles[0];
   useEffect(() => {
-    const getNews = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${
-            import.meta.env.VITE_API_KEY
-          }`
-        );
-        const data = response.data;
-        console.log(data.results);
-        setNews(data.results);
-      } catch (error) {
-        console.error("Error fetching news:", error);
-      }
-    };
-    getNews();
-  }, []);
+    dispatch(fetchArticles());
+  }, [dispatch]);
 
   return (
     <div className="flex items-center justify-center flex-col">
