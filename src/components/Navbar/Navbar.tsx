@@ -1,7 +1,9 @@
-import AngularBrackets from "../../assets/SVGs/AngularBrackets";
-import NavIcon from "../../assets/SVGs/NavIcon";
-import SearchIcon from "../../assets/SVGs/SearchIcon";
-import UserProfile from "../../assets/SVGs/UserProfile";
+import {
+  AngularBrackets,
+  NavIcon,
+  SearchIcon,
+  UserProfile,
+} from "../SVGs/Icons";
 import logo from "./logo.png";
 
 const Navbar = () => {

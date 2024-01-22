@@ -1,7 +1,5 @@
-import BookMark from "../assets/SVGs/BookMark";
-import HeartOutline from "../assets/SVGs/HeartOutline";
-import ShareIcon from "../assets/SVGs/ShareIcon";
 import NewsProps from "../interfaces/NewsType";
+import { BookMark, HeartOutline, ShareIcon } from "./SVGs/Icons";
 
 export default function TopStory({
   headline,
