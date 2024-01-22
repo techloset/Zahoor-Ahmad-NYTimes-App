@@ -3,17 +3,7 @@ import { fetchArticles } from "../../features/news/newsSlice";
 import { useAppSelector, useAppDispatch } from "../../App/hooks";
 import { RootState } from "../../App/store";
 import NewsCard from "./NewsCard";
-
-export interface TopNews {
-  _id: string;
-  title: string;
-  abstract: string;
-  url: string;
-  multimedia: { url: string; format: string }[];
-  published_date: string;
-  byline: string;
-}
-
+import TopNews from "../../interfaces/TopNews";
 export default function NewsSection() {
   const { articles } = useAppSelector((state: RootState) => state.news);
   const dispatch = useAppDispatch();

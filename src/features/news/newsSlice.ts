@@ -1,21 +1,12 @@
 // newsSlice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-
-interface TopNews {
-  _id: string;
-  title: string;
-  abstract: string;
-  url: string;
-  multimedia: { url: string; format: string }[];
-  published_date: string;
-  byline: string;
-}
+import TopNews from "../../interfaces/TopNews";
 
 export interface NewsState {
   articles: TopNews[];
   status: "idle" | "loading" | "succeeded" | "failed";
-  error: string | null;
+  error: string | undefined | null;
 }
 
 const initialState: NewsState = {
@@ -51,7 +42,11 @@ const newsSlice = createSlice({
           state.status = "succeeded";
           state.articles = action.payload;
         }
-      );
+      )
+      .addCase(fetchArticles.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      });
   },
 });
 

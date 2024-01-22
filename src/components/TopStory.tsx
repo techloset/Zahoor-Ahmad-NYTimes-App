@@ -1,13 +1,5 @@
-export interface NewsProps {
-  _id: string;
-  headline: string;
-  description?: string;
-  imageSource?: string;
-  pubishedAt?: string;
-  url?: string;
-  byLine: string;
-  imageAlternative?: string;
-}
+import NewsProps from "../interfaces/NewsType";
+
 export default function TopStory({
   headline,
   description,

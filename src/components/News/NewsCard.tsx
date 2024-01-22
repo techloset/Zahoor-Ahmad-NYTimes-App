@@ -1,4 +1,5 @@
-import { NewsProps } from "../TopStory";
+import NewsProps from "../../interfaces/NewsType";
+
 const NewsCard = ({
   // _id,
   headline,

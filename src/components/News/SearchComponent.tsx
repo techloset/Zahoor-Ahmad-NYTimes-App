@@ -1,9 +1,5 @@
 import { useState } from "react";
 
-// interface visibilityProps {
-//   visibility: boolean;
-// }
-
 const SearchComponent = () => {
   const [search, setSearch] = useState<string>("");
   return (

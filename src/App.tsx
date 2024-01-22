@@ -2,9 +2,10 @@ import axios from "axios";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import BreakingNewsAlert from "./components/news/BreakingNewsAlert";
-import NewsSection, { TopNews } from "./components/news/NewsSection";
 import TopStory from "./components/TopStory";
 import { useEffect, useState } from "react";
+import TopNews from "./interfaces/TopNews";
+import NewsSection from "./components/news/NewsSection";
 // import SearchComponent from "./components/News/SearchComponent";
 
 export default function App() {
