@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import NewsCard from "./NewsCard";
 import { fetchArticles } from "../../features/news/newsSlice";
 import { useAppSelector, useAppDispatch } from "../../App/hooks";
 import { RootState } from "../../App/store";
+import NewsCard from "./NewsCard";
 
 export interface TopNews {
   _id: string;
@@ -32,7 +32,7 @@ export default function NewsSection() {
             byLine={article.byline}
             headline={article.title}
             description={article.abstract}
-            imageSource={article.multimedia[0].url}
+            imageSource={article.multimedia[0]?.url}
             imageAlternative={article.multimedia[0].format}
             key={article._id}
             pubishedAt={article.published_date.split("T")[0]}
