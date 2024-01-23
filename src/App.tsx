@@ -1,9 +1,7 @@
 import { useEffect } from "react";
-import Navbar from "./components/navbar/Navbar";
 import TopStory from "./components/TopStory";
 import BreakingNewsAlert from "./components/news/BreakingNewsAlert";
 import NewsSection from "./components/news/NewsSection";
-import Footer from "./components/footer/Footer";
 import { useAppDispatch, useAppSelector } from "./App/hooks";
 import { RootState } from "./App/store";
 import { fetchArticles } from "./features/news/newsSlice";
@@ -18,7 +16,6 @@ export default function App() {
 
   return (
     <div className="flex items-center justify-center flex-col">
-      <Navbar />
       <div className="md:mx-[277px] sm:mx-[100px] max-w-[1920px] flex sm:gap-[50px] flex-col items-center">
         {/* <SearchComponent /> */}
         <TopStory
@@ -35,7 +32,6 @@ export default function App() {
         <BreakingNewsAlert />
         <NewsSection />
       </div>
-      <Footer />
     </div>
   );
 }
