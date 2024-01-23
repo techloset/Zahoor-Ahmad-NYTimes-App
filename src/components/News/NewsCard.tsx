@@ -46,10 +46,12 @@ const NewsCard = ({
             <HeartOutline />
             <span className="text-[10px]">29</span>
           </div>
-          <ShareIcon />
-          <span className="text-[10px]">28</span>
+          <div className="flex items-center gap-[7px]">
+            <ShareIcon />
+            <span className="text-[10px]">28</span>
+          </div>
+          <BookMark />
         </div>
-        <BookMark />
       </div>
     </div>
   );
