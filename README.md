@@ -10,7 +10,6 @@ This project is a news app that uses the New York Times API to fetch news articl
 - Redux-Toolkit
 - React-Router-Dom
 - Axios
-- React-Icons
 - Tailwind CSS
 - Vercel
 

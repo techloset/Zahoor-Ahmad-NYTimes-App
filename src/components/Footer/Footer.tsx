@@ -3,7 +3,7 @@ import footerLogo from "./footer-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="sm:flex  w-full sm:h-[250px] h-[290px] bg-slate-900 mb-0">
+    <footer className="sm:flex  w-full sm:h-[290px] min-h-[290px] bg-slate-900 mb-0">
       <div className="sm:mr-[188px] mr-[94px]">
         <img
           className="sm:ml-[448px] ml-[154px] sm:pt-[79px] pt-[20px] sm:mb-[41px] mb-[7px]"
@@ -24,14 +24,14 @@ const Footer = () => {
           <li>nbcnews.com Site Map</li>
         </ul>
       </div>
-      <div className="justify-center text-white text-[15px] font-medium font-['Poppins'] leading-loose tracking-tight mr-[392px] sm:mt-[80px] mt-[0px]">
-        <ul className="flex sm:gap-6 flex-col sm:flex-row min-w-full text-center">
+      <div className="text-white text-[15px] font-medium font-['Poppins'] leading-loose tracking-tight sm:mr-[392px] sm:mt-[80px] mt-[15px]">
+        <ul className="flex sm:gap-6 flex-col sm:flex-row sm:w-full w-screen text-center">
           <li>About</li>
           <li>Contact</li>
           <li>Careers</li>
           <li>Coupons</li>
         </ul>
-        <div className="flex gap-[51.43px] sm:mt-[30px] justify-end">
+        <div className="flex sm:gap-[51.43px] gap-[30px] my-[30px] sm:justify-end justify-center">
           <RssIcon />
           <TwitterIcon />
           <RedditIcon />
