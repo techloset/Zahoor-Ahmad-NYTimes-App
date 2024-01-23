@@ -18,6 +18,25 @@ export const AngularBrackets = () => {
   );
 };
 
+export const CrossIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="21"
+      viewBox="0 0 22 21"
+      fill="none"
+    >
+      <path
+        d="M8.53063 10.914L8.7143 10.7444L8.53063 10.5748L0.771847 3.41086L3.05198 1.30554L10.8108 8.46947L10.9944 8.63907L11.1781 8.46947L18.9369 1.30554L21.217 3.41085L13.4582 10.5748L13.2746 10.7444L13.4582 10.914L21.217 18.0779L18.9369 20.1832L11.1781 13.0193L10.9944 12.8497L10.8108 13.0193L3.05198 20.1832L0.771847 18.0779L8.53063 10.914Z"
+        fill="black"
+        stroke="white"
+        stroke-width="0.5"
+      />
+    </svg>
+  );
+};
+
 export const BookMark = () => {
   return (
     <svg
