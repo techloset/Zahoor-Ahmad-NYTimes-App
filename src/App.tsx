@@ -5,6 +5,7 @@ import NewsSection from "./components/news/NewsSection";
 import { useAppDispatch, useAppSelector } from "./App/hooks";
 import { RootState } from "./App/store";
 import { fetchArticles } from "./features/news/newsSlice";
+import Footer from "./components/footer/Footer";
 
 export default function App() {
   const { articles } = useAppSelector((state: RootState) => state.news);
@@ -32,6 +33,7 @@ export default function App() {
         <BreakingNewsAlert />
         <NewsSection />
       </div>
+      <Footer />
     </div>
   );
 }
