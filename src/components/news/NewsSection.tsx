@@ -6,6 +6,7 @@ import NewsCard from "./NewsCard";
 import TopNews from "../../interfaces/TopNews";
 export default function NewsSection() {
   const { articles } = useAppSelector((state: RootState) => state.news);
+  const totalArticles = articles.slice(1, articles.length);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -16,7 +17,7 @@ export default function NewsSection() {
     <div className="sm:max-w-[1920px] sm:mx-0 mx-[16px] sm:mb-[50px]">
       <h3 className="font-bold text-3xl text-center">News Section</h3>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-[26px] gap-[16px]">
-        {articles.map((article: TopNews) => (
+        {totalArticles.map((article: TopNews) => (
           <NewsCard
             _id={article._id}
             byLine={article.byline}

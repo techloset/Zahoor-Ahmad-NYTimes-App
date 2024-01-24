@@ -1,5 +1,5 @@
 import NewsProps from "../interfaces/NewsType";
-import { BookMark, HeartOutline, ShareIcon } from "./SVGs/Icons";
+import { BookMark, HeartOutline, ShareIcon } from "../assets/SVGs/Icons";
 
 export default function TopStory({
   headline,
@@ -11,7 +11,7 @@ export default function TopStory({
   imageAlternative,
 }: NewsProps) {
   return (
-    <div className="min-h-[500px] flex flex-col sm:flex-row sm:gap-[76px] sm:mt-[32px] ">
+    <div className="min-h-[500px] flex flex-col sm:flex-row sm:gap-[76px] sm:mt-[80px] sm:max-w-[1366px] ">
       <div
         style={{
           background:
@@ -19,7 +19,7 @@ export default function TopStory({
         }}
         className="w-full sm:hidden h-[372px] absolute z-10"
       ></div>
-      <div className="sm:max-w-750px sm:min-w-750px sm:max-h-[500px] h-[456px] w-full overflow-hidden">
+      <div className="sm:w-750px sm:max-h-[500px] h-[456px] w-full overflow-hidden">
         <img src={imageSource} alt={imageAlternative} />
       </div>
       <div>

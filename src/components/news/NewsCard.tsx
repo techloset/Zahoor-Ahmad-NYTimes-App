@@ -1,5 +1,5 @@
 import NewsProps from "../../interfaces/NewsType";
-import { BookMark, HeartOutline, ShareIcon } from "../SVGs/Icons";
+import { BookMark, HeartOutline, ShareIcon } from "../../assets/SVGs/Icons";
 
 const NewsCard = ({
   // _id,

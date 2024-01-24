@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "./App/hooks";
 import { RootState } from "./App/store";
 import { fetchArticles } from "./features/news/newsSlice";
 import Footer from "./components/footer/Footer";
+import Navbar from "./components/navbar/Navbar";
 
 export default function App() {
   const { articles } = useAppSelector((state: RootState) => state.news);
@@ -14,9 +15,11 @@ export default function App() {
   useEffect(() => {
     dispatch(fetchArticles());
   }, [dispatch]);
+ 
 
   return (
     <div className="flex items-center justify-center flex-col">
+      <Navbar />
       <div className="md:mx-[277px] sm:mx-[100px] max-w-[1920px] flex sm:gap-[50px] flex-col items-center">
         {/* <SearchComponent /> */}
         <TopStory

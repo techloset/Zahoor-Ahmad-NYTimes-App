@@ -3,7 +3,7 @@ import {
   NavIcon,
   SearchIcon,
   UserProfile,
-} from "../SVGs/Icons";
+} from "../../assets/SVGs/Icons";
 import logo from "./logo.png";
 
 const Navbar = () => {
