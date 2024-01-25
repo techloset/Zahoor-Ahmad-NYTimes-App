@@ -1,7 +1,7 @@
-import NewsProps from "../interfaces/NewsType";
-import { BookMark, HeartOutline, ShareIcon } from "../assets/SVGs/Icons";
+import NewsProps from "../../interfaces/NewsType";
+import { BookMark, HeartOutline, ShareIcon } from "../../assets/SVGs/Icons";
 
-export default function TopStory({
+export default function NewsModal({
   headline,
   description,
   imageSource,
@@ -11,8 +11,8 @@ export default function TopStory({
   imageAlternative,
 }: NewsProps) {
   return (
-    <div className="min-h-[500px] flex flex-col sm:flex-row sm:gap-[76px] sm:mt-[100px] max-w-[1366px] ">
-      <div className="sm:max-w-750px sm:min-w-750px sm:max-h-[500px] h-[456px] w-full overflow-hidden hidden sm:block">
+    <div className="p-[48px] min-h-[500px] flex flex-col sm:flex-row sm:gap-[76px] sm:mt-[100px] max-w-[1366px] ">
+      <div className="sm:max-w-750px sm:min-w-750px sm:max-h-[500px] h-[456px] w-full overflow-hidden">
         <img src={imageSource} alt={imageAlternative} />
       </div>
       <div>
@@ -28,7 +28,7 @@ export default function TopStory({
         </div>
         <div>
           <a href={url} target="_blank">
-            <h3 className="sm:w-[540px] sm:text-zinc-800 text-white text-2xl w-[327px] sm:text-[32px] sm:mt-0 mx-[24px] sm:mx-0 sm:mb-2  font-semibold font-IBM hidden sm:block ">
+            <h3 className="sm:w-[540px] sm:text-zinc-800 text-white text-2xl w-[327px] sm:text-[32px] sm:mt-0 mx-[24px] sm:mx-0 sm:mb-2  font-semibold font-IBM z-50">
               {headline}
             </h3>
           </a>
@@ -43,21 +43,6 @@ export default function TopStory({
           <p className="sm:h-5 opacity-70 text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snug">
             {byLine}
           </p>
-        </div>
-      </div>
-      <div
-        style={{
-          backgroundImage: `url(${imageSource})`,
-          height: "493px",
-          width: "100%",
-          overflow: "hidden",
-        }}
-        className={`sm:hidden h-[493px] w-full overflow-hidden bg-cover bg-center bg-no-repeat flex items-end `}
-      >
-        <div className="bg-gradient-to-t from-black to-transparent w-screen h-[375px] py-[84px] flex items-end">
-          <h3 className="text-white text-2xl w-[327px] mx-[24px] font-semibold font-IBM z-[100px]">
-            {headline}
-          </h3>
         </div>
       </div>
     </div>
