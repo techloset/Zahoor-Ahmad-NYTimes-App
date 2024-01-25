@@ -3,10 +3,10 @@ import TopStory from "./components/TopStory";
 import BreakingNewsAlert from "./components/news/BreakingNewsAlert";
 import NewsSection from "./components/news/NewsSection";
 import { useAppDispatch, useAppSelector } from "./App/hooks";
-import { RootState } from "./App/store";
-import { fetchArticles } from "./features/news/newsSlice";
+import { RootState } from "./store";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
+import { fetchArticles } from "./features/news/newsSlice";
 
 export default function App() {
   const { articles } = useAppSelector((state: RootState) => state.news);
@@ -23,7 +23,7 @@ export default function App() {
         {/* <SearchComponent /> */}
         <TopStory
           _id={topNews?._id}
-          byline={topNews?.byline}
+          byLine={topNews?.byline}
           headline={topNews?.title}
           description={topNews?.abstract}
           imageSource={topNews?.multimedia[0].url}

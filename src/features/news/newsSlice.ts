@@ -1,7 +1,7 @@
 // newsSlice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import TopNews from "../../interfaces/TopNews";
+import TopNews from "../../interfaces/TopNewsType";
 
 export interface NewsState {
   articles: TopNews[];

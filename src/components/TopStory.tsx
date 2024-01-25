@@ -7,11 +7,11 @@ export default function TopStory({
   imageSource,
   pubishedAt,
   url,
-  byline,
+  byLine,
   imageAlternative,
 }: NewsProps) {
   return (
-    <div className="min-h-[500px] flex flex-col sm:flex-row sm:gap-[76px] sm:mt-[80px] sm:max-w-[1366px] ">
+    <div className="min-h-[500px] flex flex-col sm:flex-row sm:gap-[76px] sm:mt-[32px] ">
       <div
         style={{
           background:
@@ -19,7 +19,7 @@ export default function TopStory({
         }}
         className="w-full sm:hidden h-[372px] absolute z-10"
       ></div>
-      <div className="sm:w-750px sm:max-h-[500px] h-[456px] w-full overflow-hidden">
+      <div className="sm:max-w-750px sm:min-w-750px sm:max-h-[500px] h-[456px] w-full overflow-hidden">
         <img src={imageSource} alt={imageAlternative} />
       </div>
       <div>
@@ -48,7 +48,7 @@ export default function TopStory({
             {pubishedAt}{" "}
           </p>
           <p className="sm:h-5 opacity-70 text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snug">
-            {byline}
+            {byLine}
           </p>
         </div>
       </div>
