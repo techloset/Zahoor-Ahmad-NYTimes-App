@@ -1,4 +1,4 @@
-export default interface TopNews {
+export default interface TopNewsType {
   _id: string;
   title: string;
   abstract: string;

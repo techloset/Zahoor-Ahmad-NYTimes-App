@@ -15,7 +15,6 @@ export default function App() {
   useEffect(() => {
     dispatch(fetchArticles());
   }, [dispatch]);
- 
 
   return (
     <div className="flex items-center justify-center flex-col">
@@ -24,7 +23,7 @@ export default function App() {
         {/* <SearchComponent /> */}
         <TopStory
           _id={topNews?._id}
-          byLine={topNews?.byline}
+          byline={topNews?.byline}
           headline={topNews?.title}
           description={topNews?.abstract}
           imageSource={topNews?.multimedia[0].url}

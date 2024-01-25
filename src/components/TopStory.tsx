@@ -7,7 +7,7 @@ export default function TopStory({
   imageSource,
   pubishedAt,
   url,
-  byLine,
+  byline,
   imageAlternative,
 }: NewsProps) {
   return (
@@ -48,7 +48,7 @@ export default function TopStory({
             {pubishedAt}{" "}
           </p>
           <p className="sm:h-5 opacity-70 text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snug">
-            {byLine}
+            {byline}
           </p>
         </div>
       </div>
