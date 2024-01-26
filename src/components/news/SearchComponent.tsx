@@ -16,7 +16,7 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
     onSearchChange(searchTerm);
   };
   return (
-    <div className="sm:h-[686px] h-screen flex justify-center flex-col items-center gap-[58px] sm:gap-[64px]">
+    <div className="sm:h-[686px] h-[90vh] flex justify-center flex-col items-center gap-[58px] sm:gap-[64px]">
       <h1 className="text-center text-zinc-800 text-5xl font-semibold font-IBM">
         Search News
       </h1>
