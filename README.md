@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+# Project Name: zahoor-news-app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
 
-Currently, two official plugins are available:
+This project is a news app that uses the New York Times API to fetch news articles. The app is built using React and Redux-Toolkit. The app is deployed on Vercel and can be accessed using the following link: https://zahoor-news-app.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+- React
+- Redux-Toolkit
+- React-Router-Dom
+- Axios
+- Tailwind CSS
+- Vercel
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Project Branches Overview
 
-- Configure the top-level `parserOptions` property like this:
+## 1. `master` Branch
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+The `master` branch is the primary branch representing the stable and production-ready version of the New York Times API website project. Commits in this branch are thoroughly tested and validated before deployment. It serves as the baseline for creating new features or fixing bugs in separate branches.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 2. `api` Branch
+
+The `api` branch is dedicated to working with API-related changes for the New York Times website project. Developers use this branch to implement, test, and integrate features or enhancements related specifically to the application's interactions with the New York Times API. Once changes in this branch are tested and validated, they can be merged into the `master` branch for production.
+
+## 3. `styles` Branch
+
+The `styles` branch focuses on handling style-related changes within the New York Times API website project. This includes modifications to the user interface (UI), CSS, and other presentational aspects. By isolating style changes in this branch, developers can work collaboratively on the project's aesthetics without affecting the logic or functionality. Once the styling updates are completed and tested, changes from this branch can be merged into the `master` branch for a unified and visually polished application.
+
+## 4. `redux` Branch
+
+The `redux` branch is created to manage state management using Redux in the New York Times API website project. This branch is specifically dedicated to implementing and testing Redux-related changes. It allows developers to handle complex state logic in a centralized manner, enhancing the scalability and maintainability of the application. Once the Redux implementation is complete and tested, changes from this branch can be merged into the `master` branch.
+
+---
+
+**Note:** Regularly merging branches into `master` ensures a cohesive and well-tested codebase for deployment, maintaining a structured and organized development workflow.
