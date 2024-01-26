@@ -11,7 +11,7 @@ import {
   createRoutesFromChildren,
 } from "react-router-dom";
 import Home from "./Pages/Home.tsx";
-import Home from "./Pages/search.tsx";
+import Search from "./Pages/search.tsx";
 const router = createBrowserRouter(
   createRoutesFromChildren(
     <Route path="/" element={<App />}>
