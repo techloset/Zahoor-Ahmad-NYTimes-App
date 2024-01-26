@@ -17,11 +17,11 @@ const Footer = () => {
           height="66px"
           width="66px"
         />
-        <p className="sm:ml-[395px] ml-[94px] text-white text-xs font-normal font-['Poppins'] leading-[25.20px] tracking-tight sm:pb-[64px] pb-[15px]">
+        <p className="sm:ml-[395px] ml-[94px] text-white text-xs font-normal font-Poppins leading-[25.20px] tracking-tight sm:pb-[64px] pb-[15px]">
           copyright © 2024 | NBC NEWS
         </p>
       </div>
-      <div className="w-[221px] h-[116px] text-white text-[15px] font-medium font-['Poppins'] leading-loose tracking-tight mr-[148px] mt-[80px] hidden sm:block">
+      <div className="w-[221px] h-[116px] text-white text-[15px] font-medium font-Poppins leading-loose tracking-tight mr-[148px] mt-[80px] hidden sm:block">
         <ul>
           <li>Privacy Policy</li>
           <li>Do not sell my personal info</li>
@@ -29,7 +29,7 @@ const Footer = () => {
           <li>nbcnews.com Site Map</li>
         </ul>
       </div>
-      <div className="text-white text-[15px] font-medium font-['Poppins'] leading-loose tracking-tight sm:mr-[392px] sm:mt-[80px] mt-[15px]">
+      <div className="text-white text-[15px] font-medium font-Poppins leading-loose tracking-tight sm:mr-[392px] sm:mt-[80px] mt-[15px]">
         <ul className="flex sm:gap-6 flex-col sm:flex-row sm:w-full w-screen text-center">
           <li>About</li>
           <li>Contact</li>

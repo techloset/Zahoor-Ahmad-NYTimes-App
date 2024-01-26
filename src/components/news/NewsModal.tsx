@@ -28,10 +28,10 @@ const NewsModal: React.FC<NewsModalProps> = ({
   }
   return (
     <div className="relative ">
-      <div className="p-[48px]  min-h-[500px] flex flex-col sm:flex-row sm:gap-[76px] sm:mt-[100px] z-[200px]  bg-white sm:w-[1462px] fixed top-[10%] left-[5%] rounded-[20px]">
+      <div className="p-[48px] min-h-[500px] flex flex-col sm:flex-row sm:gap-[76px] sm:mt-[100px] z-[200px] shadow-lg shadow-black bg-white sm:w-[1462px] fixed top-[10%] left-[10%] border rounded-[20px]">
         <div
           onClick={closeModal}
-          className="fixed top-2 right-2 hover:cursor-pointer"
+          className="absolute top-4 right-4 hover:cursor-pointer"
         >
           <CrossIcon />
         </div>
@@ -43,7 +43,7 @@ const NewsModal: React.FC<NewsModalProps> = ({
             <p className="text-red-700 text-sm font-semibold font-Poppins leading-[29.40px] tracking-tight">
               Trending
             </p>
-            <div className="flex sm:gap-[20px]">
+            <div className="sm:flex sm:gap-[20px] hidden ">
               <HeartOutline />
               <ShareIcon />
               <BookMark />
