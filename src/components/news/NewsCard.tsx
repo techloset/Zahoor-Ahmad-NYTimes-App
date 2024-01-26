@@ -24,11 +24,8 @@ const NewsCard: React.FC<NewsProps> = ({
   };
 
   return (
-    <div onClick={openModal}>
-      <div
-        className="sm:h-[520px] sm:w-[438px] flex flex-col rounded-lg shadow-black/15 hover:shadow-black/20 shadow-md hover:shadow-lg border-black-2"
-        // onClick={openModal}
-      >
+    <div>
+      <div className="sm:h-[520px] sm:w-[438px] flex flex-col rounded-lg shadow-black/15 hover:shadow-black/20 shadow-md hover:shadow-lg border-black-2">
         <div className="sm:w-[438px] sm:h-[246px] h-[210px] overflow-hidden sm:mb-3.125rem rounded-t-lg">
           <img
             src={imageSource}
@@ -38,7 +35,10 @@ const NewsCard: React.FC<NewsProps> = ({
         </div>
         <div>
           <div className="flex flex-col sm:gap-[17px] sm:mb-[15px] sm:px-[25px] px-[19px] py-[10px]">
-            <h3 className="sm:w-[388px] sm:h-[45px] text-lg text-zinc-800 sm:text-lg font-semibold font-IBM leading-[27px] overflow-x-clip">
+            <h3
+              onClick={openModal}
+              className="hover:cursor-pointer sm:w-[388px] sm:h-[45px] text-lg text-zinc-800 sm:text-lg font-semibold font-IBM leading-[27px] overflow-x-clip"
+            >
               {headline}
             </h3>
             <p className="sm:max-w-[500px] sm:h-[94px] text-zinc-800 sm:text-[15px] font-normal font-Poppins leading-normal overflow-x-clip text-wrap">
