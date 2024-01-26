@@ -6,7 +6,7 @@ import { fetchArticles } from "../features/news/newsSlice";
 import SearchComponent from "../components/news/SearchComponent";
 import NewsCard from "../components/news/NewsCard";
 
-export default function NewsSection() {
+export default function Search() {
   const { articles, error } = useAppSelector((state: RootState) => state.news);
   const dispatch = useAppDispatch();
   const [filteredArticles, setFilteredArticles] = useState<TopNewsType[]>(
