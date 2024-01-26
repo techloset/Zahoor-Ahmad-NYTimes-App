@@ -4,10 +4,9 @@ import {
   RssIcon,
   TwitterIcon,
 } from "../../assets/SVGs/Icons";
-import footerLogo from "./footer-logo.png";
+import footerLogo from "../../assets/footer-logo.png";
 
-const Footer = () =>
- {
+const Footer = () => {
   return (
     <footer className="sm:flex  w-full sm:h-[290px] min-h-[290px] bg-slate-900 mb-0 justify-center">
       <div className="sm:mr-[188px] mr-[94px]">

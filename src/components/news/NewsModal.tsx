@@ -1,7 +1,20 @@
+import React from "react";
 import NewsProps from "../../interfaces/NewsType";
-import { BookMark, HeartOutline, ShareIcon } from "../../assets/SVGs/Icons";
+import {
+  BookMark,
+  CrossIcon,
+  HeartOutline,
+  ShareIcon,
+} from "../../assets/SVGs/Icons";
 
-export default function NewsModal({
+interface NewsModalProps extends NewsProps {
+  isOpen: boolean;
+  closeModal: () => void;
+}
+
+const NewsModal: React.FC<NewsModalProps> = ({
+  isOpen,
+  closeModal,
   headline,
   description,
   imageSource,
@@ -9,9 +22,15 @@ export default function NewsModal({
   url,
   byLine,
   imageAlternative,
-}: NewsProps) {
+}: NewsModalProps) => {
+  if (!isOpen) {
+    return null;
+  }
   return (
     <div className="p-[48px] min-h-[500px] flex flex-col sm:flex-row sm:gap-[76px] sm:mt-[100px] max-w-[1366px] ">
+      <div onClick={closeModal} className="fixed top-2 right-2">
+        <CrossIcon />
+      </div>
       <div className="sm:max-w-750px sm:min-w-750px sm:max-h-[500px] h-[456px] w-full overflow-hidden">
         <img src={imageSource} alt={imageAlternative} />
       </div>
@@ -47,4 +66,6 @@ export default function NewsModal({
       </div>
     </div>
   );
-}
+};
+
+export default NewsModal;

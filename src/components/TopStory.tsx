@@ -52,7 +52,7 @@ export default function TopStory({
           width: "100%",
           overflow: "hidden",
         }}
-        className="sm:hidden h-[493px] w-full overflow-hidden bg-cover bg-center bg-no-repeat flex items-end mt-[100px] mb-[-50px] "
+        className="sm:hidden h-[493px] w-full overflow-hidden bg-cover bg-center bg-no-repeat flex items-end mt-[100px] mb-[0px] "
       >
         <div className="bg-gradient-to-t from-black to-transparent w-screen h-[375px] pb-[72px] flex items-end">
           <h3 className="text-white text-2xl w-[327px] mx-[24px] font-semibold font-IBM z-[100px]">
