@@ -4,7 +4,6 @@ export default interface NewsProps {
   description?: string;
   imageSource?: string;
   pubishedAt?: string;
-  url?: string;
   byLine: string;
   imageAlternative?: string;
 }

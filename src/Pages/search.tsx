@@ -1,36 +1,29 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../App/hooks";
 import { RootState } from "../store";
-import TopNewsType from "../interfaces/TopNewsType";
-import { fetchArticles } from "../features/news/newsSlice";
 import SearchComponent from "../components/news/SearchComponent";
 import NewsCard from "../components/news/NewsCard";
+import ArticleSearchType from "../interfaces/ArticleSearchType";
+import { fetchSearchArticles } from "../features/news/searchSlice";
 
 export default function Search() {
-  const { articles, error } = useAppSelector((state: RootState) => state.news);
-  const dispatch = useAppDispatch();
-  const [filteredArticles, setFilteredArticles] = useState<TopNewsType[]>(
-    articles.slice(1, articles.length)
+  const { searchArticles, error } = useAppSelector(
+    (state: RootState) => state.searchNews
   );
+  const dispatch = useAppDispatch();
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   useEffect(() => {
-    dispatch(fetchArticles());
-  }, [dispatch]);
+    dispatch(fetchSearchArticles(searchTerm));
+  }, [dispatch, searchTerm]);
 
-  const handleSearchChange = (searchTerm: string) => {
-    const filtered = articles.filter(
-      (article) =>
-        article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        article.byline.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        article.abstract.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        article.published_date.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredArticles(filtered);
+  const handleSearchSubmit = (search: string) => {
+    setSearchTerm(search.toLowerCase());
   };
 
   return (
-    <div className=" mx-[16px] sm:mb-[50px]">
-      <SearchComponent onSearchChange={handleSearchChange} />
+    <div className="mx-[16px] sm:mb-[50px]">
+      <SearchComponent onSearchSubmit={handleSearchSubmit} />
       <div className="flex justify-center mb-10">
         <div className="flex flex-col">
           <h1 className="h-54 w-[1368px] text-zinc-800 text-lg font-semibold font-Poppins">
@@ -43,17 +36,16 @@ export default function Search() {
 
       <div className="flex justify-center ">
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-[26px] gap-[16px] sm:max-w-[1366px]">
-          {filteredArticles.map((article: TopNewsType) => (
+          {searchArticles.map((article: ArticleSearchType) => (
             <NewsCard
-              _id={article._id}
-              byLine={article.byline}
-              headline={article.title}
-              description={article.abstract}
-              imageSource={article.multimedia[0]?.url}
-              imageAlternative={article.multimedia[0].format}
-              key={article._id}
-              pubishedAt={article.published_date.split("T")[0]}
-              url={article.url}
+              key={article?._id}
+              byLine={article?.byline?.original || ""}
+              headline={article?.headline?.main || ""}
+              imageSource={`https://nytimes.com/${article?.multimedia[0]?.url}`}
+              _id={article?._id}
+              description={article?.abstract || ""}
+              imageAlternative={article?.multimedia[0]?.crop_name || ""}
+              pubishedAt={article?.pub_date?.split("T")[0] || ""}
             />
           ))}
         </div>

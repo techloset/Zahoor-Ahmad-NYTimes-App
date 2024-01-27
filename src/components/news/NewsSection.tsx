@@ -40,7 +40,6 @@ export default function NewsSection() {
               imageAlternative={article.multimedia[0].format}
               key={article._id}
               pubishedAt={article.published_date.split("T")[0]}
-              url={article.url}
             />
           ))}
         </div>

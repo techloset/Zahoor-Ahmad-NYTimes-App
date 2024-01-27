@@ -6,7 +6,6 @@ export default function TopStory({
   description,
   imageSource,
   pubishedAt,
-  url,
   byLine,
   imageAlternative,
 }: NewsProps) {
@@ -27,11 +26,9 @@ export default function TopStory({
           </div>
         </div>
         <div>
-          <a href={url} target="_blank">
-            <h3 className="sm:w-[540px] sm:text-zinc-800 text-white text-2xl w-[327px] sm:text-[32px] sm:mt-0 mx-[24px] sm:mx-0 sm:mb-2  font-semibold font-IBM hidden sm:block ">
-              {headline}
-            </h3>
-          </a>
+          <h3 className="sm:w-[540px] sm:text-zinc-800 text-white text-2xl w-[327px] sm:text-[32px] sm:mt-0 mx-[24px] sm:mx-0 sm:mb-2  font-semibold font-IBM hidden sm:block hover:cursor-pointer">
+            {headline}
+          </h3>
           <p className="sm:w-[500px] hidden sm:block sm:h-[94px] text-zinc-800 sm:text-[15px] font-normal font-Poppins leading-normal">
             {description}
           </p>

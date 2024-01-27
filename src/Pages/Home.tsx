@@ -27,7 +27,6 @@ export default function Home() {
           imageAlternative={topNews?.multimedia[0].format}
           key={topNews?._id}
           pubishedAt={topNews?.published_date.split("T")[0]}
-          url={topNews?.url}
         />
         <NewsSection />
       </div>

@@ -9,7 +9,6 @@ const NewsCard: React.FC<NewsProps> = ({
   description,
   imageSource,
   pubishedAt,
-  url,
   byLine,
   imageAlternative,
 }: NewsProps) => {
@@ -77,7 +76,6 @@ const NewsCard: React.FC<NewsProps> = ({
         imageSource={imageSource}
         imageAlternative={imageAlternative}
         pubishedAt={pubishedAt}
-        url={url}
         byLine={byLine}
       />
     </div>
