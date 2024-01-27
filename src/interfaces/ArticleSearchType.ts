@@ -12,5 +12,4 @@ export default interface ArticleSearchType {
   byline: {
     original: string;
   };
-  web_url: string;
 }

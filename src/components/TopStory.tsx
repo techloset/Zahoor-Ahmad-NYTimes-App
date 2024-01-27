@@ -1,7 +1,10 @@
 import NewsProps from "../interfaces/NewsType";
 import { BookMark, HeartOutline, ShareIcon } from "../assets/SVGs/Icons";
+import { useState } from "react";
+import NewsModal from "./news/NewsModal";
 
 export default function TopStory({
+  _id,
   headline,
   description,
   imageSource,
@@ -9,6 +12,16 @@ export default function TopStory({
   byLine,
   imageAlternative,
 }: NewsProps) {
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <div className="min-h-[500px] flex flex-col sm:flex-row sm:gap-[76px] sm:mt-[100px] max-w-[1366px] ">
       <div className="sm:max-w-750px sm:min-w-750px sm:max-h-[500px] h-[456px] w-full overflow-hidden hidden sm:block">
@@ -26,7 +39,10 @@ export default function TopStory({
           </div>
         </div>
         <div>
-          <h3 className="sm:w-[540px] sm:text-zinc-800 text-white text-2xl w-[327px] sm:text-[32px] sm:mt-0 mx-[24px] sm:mx-0 sm:mb-2  font-semibold font-IBM hidden sm:block hover:cursor-pointer">
+          <h3
+            className="sm:w-[540px] sm:text-zinc-800 text-white text-2xl w-[327px] sm:text-[32px] sm:mt-0 mx-[24px] sm:mx-0 sm:mb-2  font-semibold font-IBM hidden sm:block hover:cursor-pointer"
+            onClick={openModal}
+          >
             {headline}
           </h3>
           <p className="sm:w-[500px] hidden sm:block sm:h-[94px] text-zinc-800 sm:text-[15px] font-normal font-Poppins leading-normal">
@@ -57,6 +73,17 @@ export default function TopStory({
           </h3>
         </div>
       </div>
+      <NewsModal
+        _id={_id}
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+        headline={headline}
+        description={description}
+        imageSource={imageSource}
+        imageAlternative={imageAlternative}
+        pubishedAt={pubishedAt}
+        byLine={byLine}
+      />
     </div>
   );
 }

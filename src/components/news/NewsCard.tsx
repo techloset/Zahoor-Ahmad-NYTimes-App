@@ -12,6 +12,7 @@ const NewsCard: React.FC<NewsProps> = ({
   byLine,
   imageAlternative,
 }: NewsProps) => {
+ 
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
   const openModal = () => {

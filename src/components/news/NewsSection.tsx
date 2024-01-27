@@ -43,7 +43,7 @@ export default function NewsSection() {
             />
           ))}
         </div>
-        <div className="text-center mt-4">
+        <div className="text-center my-4">
           <ShowMoreButton onClick={toggleShowMore} isShowingMore={showMore} />
         </div>
       </div>

@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../App/hooks";
 import { RootState } from "../store";
 import { fetchArticles } from "../features/news/newsSlice";
-import Navbar from "../components/navbar/Navbar";
 import TopStory from "../components/TopStory";
 import NewsSection from "../components/news/NewsSection";
 
@@ -16,7 +15,6 @@ export default function Home() {
 
   return (
     <div className="flex items-center justify-center flex-col">
-      <Navbar />
       <div className="md:mx-[277px] sm:mx-[100px] max-w-[1920px] flex sm:gap-[50px] flex-col items-center">
         <TopStory
           _id={topNews?._id}

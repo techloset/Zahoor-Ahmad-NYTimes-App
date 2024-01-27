@@ -26,15 +26,15 @@ const NewsModal: React.FC<NewsModalProps> = ({
     return null;
   }
   return (
-    <div className="h-[100vh] w-[100vw] flex justify-center items-center bg-black/40 fixed top-0 left-0">
-      <div className="p-[48px] rounded-[20px] min-h-[500px] flex flex-col sm:flex-row sm:gap-[76px] sm:mt-[100px] relative bg-white sm:w-[1462px] ">
+    <div className="w-full h-full flex justify-center items-center bg-black/40 fixed top-0 left-0">
+      <div className="sm:p-[48px] p-[24px] rounded-[20px] h-[846px] sm:h-[500px] flex flex-col sm:flex-row sm:gap-[76px] relative bg-white w-[327px] sm:w-[1462px] ">
         <div
           onClick={closeModal}
           className="hover:cursor-pointer absolute top-4 right-4"
         >
           <CrossIcon />
         </div>
-        <div className="sm:max-w-750px sm:min-w-750px sm:max-h-[500px] h-[456px] w-full overflow-hidden">
+        <div className="sm:max-w-[750px] w-[279px]  sm:min-w-[750px] sm:max-h-[500px] h-[347px] overflow-hidden">
           <img src={imageSource} alt={imageAlternative} />
         </div>
         <div>
