@@ -10,8 +10,8 @@ import {
   createBrowserRouter,
   createRoutesFromChildren,
 } from "react-router-dom";
-import Home from "./Pages/home";
-import Search from "./Pages/search";
+import Home from "./Pages/Home.tsx";
+import Search from "./Pages/Search.tsx";
 const router = createBrowserRouter(
   createRoutesFromChildren(
     <Route path="/" element={<App />}>
