@@ -36,7 +36,7 @@ export default function Search() {
         </h1>
         <div className="w-10 h-0.5 opacity-90 bg-red-700 rounded-sm sm:hidden" />
       </div>
-      <SearchComponent onSearchChange={handleSearchChange} />
+      <SearchComponent onSearchSubmit={handleSearchChange} />
       {error && <div className="text-red-500 text-center">{error}</div>}
 
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-[26px] gap-[16px]">
@@ -50,7 +50,6 @@ export default function Search() {
             imageAlternative={article.multimedia[0].format}
             key={article._id}
             pubishedAt={article.published_date.split("T")[0]}
-            url={article.url}
           />
         ))}
       </div>
