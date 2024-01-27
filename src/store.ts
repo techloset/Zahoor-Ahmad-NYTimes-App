@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import newsReducer from "./features/news/newsSlice";
+import searchNewsReducer from "./features/news/searchSlice";
 
 export const store = configureStore({
   reducer: {
     news: newsReducer,
+    searchNews: searchNewsReducer,
   },
 });
 
