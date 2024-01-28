@@ -9,8 +9,8 @@ import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-center relative z-[100px] ">
-      <div className="w-full font-Nunito text-[16px] bg-white w-fulll sm:h-20 bg-opacity-80 backdrop-blur-[28px] h-[80px] fixed top-0">
+    <div className="flex justify-center relative z-[100px]">
+      <div className="w-full font-Nunito text-[16px] bg-white sm:h-20 bg-opacity-80 backdrop-blur-[28px] h-[80px] fixed top-0">
         <nav className="flex my-[14px] items-center sm:justify-center justify-between mx-[24px]">
           <div className="sm:mr-[136px]">
             <Link to="/">

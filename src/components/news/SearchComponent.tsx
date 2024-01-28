@@ -44,4 +44,6 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
   );
 };
 
+
+
 export default SearchComponent;

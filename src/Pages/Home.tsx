@@ -4,6 +4,8 @@ import { RootState } from "../store";
 import { fetchArticles } from "../features/news/newsSlice";
 import TopStory from "../components/TopStory";
 import NewsSection from "../components/news/NewsSection";
+import Categories from "../components/news/Categories";
+import BreakingNewsAlert from "../components/news/BreakingNewsAlert";
 
 export default function Home() {
   const { articles } = useAppSelector((state: RootState) => state.news);
@@ -26,6 +28,8 @@ export default function Home() {
           key={topNews?._id}
           pubishedAt={topNews?.published_date.split("T")[0]}
         />
+        <BreakingNewsAlert />
+        <Categories />
         <NewsSection />
       </div>
     </div>
