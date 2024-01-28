@@ -6,13 +6,14 @@ import NewsCard from "../components/news/NewsCard";
 import ArticleSearchType from "../interfaces/ArticleSearchType";
 import { fetchSearchArticles } from "../features/search/searchSlice";
 import SearchResults from "../components/SearchResults";
+import { formatTimeDifference } from "../components/news/Time";
 
 export default function Search() {
   const { searchArticles, error } = useAppSelector(
     (state: RootState) => state.searchNews
   );
   const dispatch = useAppDispatch();
-  const [searchTerm, setSearchTerm] = useState<string>("elections");
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   useEffect(() => {
     dispatch(fetchSearchArticles(searchTerm));
@@ -39,7 +40,7 @@ export default function Search() {
               _id={article?._id}
               description={article?.abstract || ""}
               imageAlternative={article?.multimedia[0]?.crop_name || ""}
-              pubishedAt={article?.pub_date?.split("T")[0] || ""}
+              pubishedAt={formatTimeDifference(article?.pub_date) || ""}
             />
           ))}
         </div>

@@ -5,13 +5,14 @@ import NewsCard from "./NewsCard";
 import { RootState } from "../../store";
 import TopNewsType from "../../interfaces/TopNewsType";
 import ShowMoreButton from "../ShowMore";
+import { formatTimeDifference } from "./Time";
 
 export default function NewsSection() {
   const { articles, error } = useAppSelector((state: RootState) => state.news);
   const dispatch = useAppDispatch();
   const [showMore, setShowMore] = useState<boolean>(false);
 
-  const visibleArticles = showMore ? articles : articles.slice(0, 9);
+  const visibleArticles = showMore ? articles : articles.slice(1, 10);
 
   useEffect(() => {
     dispatch(fetchArticles());
@@ -35,7 +36,8 @@ export default function NewsSection() {
               description={article.abstract}
               imageSource={article.multimedia[0]?.url}
               imageAlternative={article.multimedia[0].format}
-              pubishedAt={article.published_date.split("T")[0]}
+              pubishedAt={formatTimeDifference(article.published_date)}
+              // pubishedAt={article.published_date.split("T")[0]}
             />
           ))}
         </div>

@@ -6,6 +6,7 @@ import TopStory from "../components/TopStory";
 import NewsSection from "../components/news/NewsSection";
 import Categories from "../components/news/Categories";
 import BreakingNewsAlert from "../components/news/BreakingNewsAlert";
+import { formatTimeDifference } from "../components/news/Time";
 
 export default function Home() {
   const { articles } = useAppSelector((state: RootState) => state.news);
@@ -26,7 +27,7 @@ export default function Home() {
           imageSource={topNews?.multimedia[0].url}
           imageAlternative={topNews?.multimedia[0].format}
           key={topNews?._id}
-          pubishedAt={topNews?.published_date.split("T")[0]}
+          pubishedAt={formatTimeDifference(topNews?.published_date)}
         />
         <BreakingNewsAlert />
         <Categories />
