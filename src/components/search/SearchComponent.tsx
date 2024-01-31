@@ -1,18 +1,35 @@
 import React, { useState, FormEvent } from "react";
 import { SearchIcon } from "../../assets/SVGs/Icons";
+import { useAppDispatch } from "../../App/hooks";
+import { updateSearchTerm } from "../../features/search/searchSlice";
 
 interface SearchComponentProps {
   searchTerm: (searchTerm: string) => void;
 }
 
+// const SearchComponent: React.FC<SearchComponentProps> = ({ searchTerm }) => {
+//   const [search, setSearch] = useState<string>("");
+
+//   const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
+//     e.preventDefault();
+//     searchTerm(search);
+//   };
+
 const SearchComponent: React.FC<SearchComponentProps> = ({ searchTerm }) => {
   const [search, setSearch] = useState<string>("");
-
+  const dispatch = useAppDispatch();
   const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     searchTerm(search);
   };
-  
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+    // Dispatch the action to update searchTerm in the Redux state
+    dispatch(updateSearchTerm(e.target.value));
+  };
+
   return (
     <div className="sm:h-[686px] h-[90vh] flex justify-center flex-col items-center gap-[58px] sm:gap-[64px]">
       <h1 className="text-center text-zinc-800 text-5xl font-semibold font-IBM">
@@ -27,10 +44,11 @@ const SearchComponent: React.FC<SearchComponentProps> = ({ searchTerm }) => {
           type="text"
           placeholder="Corona Virus Updates"
           value={search}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            e.preventDefault();
-            setSearch(e.target.value);
-          }}
+          // onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          //   e.preventDefault();
+          //   setSearch(e.target.value);
+          // }}
+          onChange={handleInputChange}
         />
         <div className="h-[24px] w-[24px] stroke-[0.5px] cursor-pointer">
           <button type="submit">

@@ -16,16 +16,16 @@ function Search() {
   );
 
   // const totalSearchedArticles = { searchArticles };
-  console.log("Search Page", searchArticles);
-  useEffect(() => {
-    const unsubscribe = setTimeout(() => {
-      if (searchTerm === "") return;
-      dispatch(fetchSearchArticles(searchTerm));
-      console.log("Search Page", dispatch(fetchSearchArticles(searchTerm)));
-    }, 1000);
-    console.log("Search Page", searchArticles);
-    return () => clearTimeout(unsubscribe);
-  }, [searchTerm, dispatch, searchArticles]);
+  // console.log("Search Page", searchArticles);
+  // useEffect(() => {
+  //   const unsubscribe = setTimeout(() => {
+  //     if (searchTerm === "") return;
+  //     dispatch(fetchSearchArticles(searchTerm));
+  //     console.log("Search Page", dispatch(fetchSearchArticles(searchTerm)));
+  //   }, 1000);
+  //   console.log("Search Page", searchArticles);
+  //   return () => clearTimeout(unsubscribe);
+  // }, [searchTerm, dispatch, searchArticles]);
 
   // useEffect(() => {
   //   if (searchTerm === "") return;
@@ -33,10 +33,34 @@ function Search() {
   //   dispatch(fetchSearchArticles(searchTerm));
   // }, [searchTerm, dispatch]);
 
+  // useEffect(() => {
+  //   if (searchTerm === "") return;
+  //   dispatch(fetchSearchArticles());
+  //   console.log("Search Page", dispatch(fetchSearchArticles()));
+  // }, [dispatch, searchTerm]);
+  useEffect(() => {
+    const fetchData = async () => {
+      if (searchTerm === "") return;
+
+      try {
+        await dispatch(fetchSearchArticles());
+        console.log("Search Page", "Data fetched successfully");
+        console.log("Search Page", dispatch(fetchSearchArticles()));
+      } catch (error) {
+        console.error("Search Page", "Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [dispatch, searchTerm]);
+
   return (
     <div className="w-full ">
       <SearchComponent
-        searchTerm={(searchTerm: string) => setSearchTerm(searchTerm)}
+        searchTerm={(searchTerm: string) => {
+          setSearchTerm(searchTerm);
+          console.log(searchTerm);
+        }}
       />
       <div className="h-54 p-[24px] text-zinc-800 text-lg font-semibold font-Poppins">
         <h1>Search Results</h1>
