@@ -17,8 +17,8 @@ export default function Home() {
   }, [dispatch]);
 
   return (
-    <div className="flex items-center justify-center flex-col">
-      <div className="md:mx-[277px] sm:mx-[100px] max-w-[1920px] flex sm:gap-[50px] flex-col items-center">
+    <div className="flex items-center w-full justify-center flex-col">
+      <div className="pb-[30px] md:mx-[277px] w-full sm:mx-[100px] max-w-[1920px] flex gap-0 sm:gap-[50px] flex-col items-center">
         <TopStory
           _id={topNews?._id}
           byLine={topNews?.byline}

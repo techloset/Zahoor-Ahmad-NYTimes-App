@@ -45,12 +45,12 @@ const TopStory: React.FC<NewsProps> = ({
           >
             {headline}
           </h3>
-          <p className="sm:w-[500px] hidden sm:block sm:h-[94px] text-zinc-800 sm:text-[15px] font-normal font-Poppins leading-normal">
+          <p className="sm:w-[500px] hidden sm:block sm:max-h-[94px] text-zinc-800 sm:text-[15px] font-normal font-Poppins leading-normal">
             {description}
           </p>
         </div>
-        <div className="sm:flex sm:gap-[9px] mt-[30px] hidden">
-          <p className="h-5 text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snu ">
+        <div className="sm:flex sm:gap-[5px] mt-[15px] hidden">
+          <p className="h-5 text-zinc-800 min-w-[94px] sm:text-[13px] font-normal font-Poppins leading-snu ">
             {pubishedAt}{" "}
           </p>
           <p className="sm:h-5 opacity-70 text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snug">

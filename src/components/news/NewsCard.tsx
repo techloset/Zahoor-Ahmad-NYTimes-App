@@ -44,8 +44,8 @@ const NewsCard: React.FC<NewsProps> = ({
               {description}
             </p>
           </div>
-          <div className="flex sm:gap-[9px] ml-[26px] mb-[20px] gap-1 ">
-            <p className="sm:w-[94px] h-5 text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snu">
+          <div className="flex sm:gap-[5px] ml-[26px] mb-[20px] gap-1 ">
+            <p className="sm:w-[94px] h-5 min-w-[94px] text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snu">
               {pubishedAt}
             </p>
             <p className="sm:h-5 opacity-70 text-zinc-800 text-[13px] font-normal font-Poppins leading-snug">
