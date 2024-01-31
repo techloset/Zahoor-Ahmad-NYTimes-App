@@ -1,39 +1,35 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import ArticleSearchType from "../../interfaces/ArticleSearchType";
 
 export interface SearchNewsState {
   searchArticles: ArticleSearchType[];
   status: "idle" | "loading" | "succeeded" | "failed";
   error: string | undefined | null;
+  searchTerm?: string;
 }
 
 const initialState: SearchNewsState = {
   searchArticles: [],
   status: "idle",
   error: null,
+  searchTerm: "",
 };
 
 export const fetchSearchArticles = createAsyncThunk(
   "searchNews/fetchSearchArticles",
-  async (searchTerm: string) => {
+  async () => {
     try {
       const response = await axios.get<{
-        response: { docs: ArticleSearchType[] };
+        response: { results: { docs: ArticleSearchType[] } };
       }>(
-        `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=${
-          import.meta.env.VITE_API_KEY
-        }`
+        `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${
+          initialState.searchTerm
+        }&api-key=${import.meta.env.VITE_API_KEY}`
       );
-      return response.data.response.docs;
+      return response.data.response.results.docs;
     } catch (error) {
-      if (axios.isAxiosError(error)) {
-        const serverError = error as AxiosError;
-        if (serverError.response?.status === 404) {
-          throw new Error("Failed to fetch search articles");
-        }
-      }
-      throw new Error("not 404 error");
+      throw new Error("Failed to fetch search articles");
     }
   }
 );

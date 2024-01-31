@@ -26,15 +26,15 @@ const NewsModal: React.FC<NewsModalProps> = ({
     return null;
   }
   return (
-    <div className="w-full h-full flex justify-center items-center bg-black/40 fixed sm:top-0 top-[80px] left-0">
-      <div className="sm:p-[48px] sm:py-0 py-[35px] sm:px-0 px-[24px] sm:rounded-[20px] rounded-[10px] max-h-[846px] sm:h-[500px] flex flex-col sm:flex-row sm:gap-[76px] relative bg-white w-[327px] sm:w-[1462px] ">
+    <div className="w-full h-full flex justify-center items-center z-[50px] bg-black/40 fixed top-0  left-0">
+      <div className="sm:p-[48px] py-[35px] px-[24px] sm:rounded-[20px] rounded-[10px] max-h-[846px] sm:h-[500px] flex flex-col sm:flex-row sm:gap-[76px] relative bg-white w-[327px] sm:w-[1462px] ">
         <div
           onClick={closeModal}
           className="hover:cursor-pointer h-[16px] w-[16px] absolute sm:top-4 top-2 right-2 sm:right-5"
         >
           <CrossIcon />
         </div>
-        <div className="sm:w-[750px] w-[279px] sm:max-h-[500px] h-[347px] overflow-hidden">
+        <div className="sm:w-[750px] w-[279px] sm:max-h-[500px] max-h-[347px] overflow-hidden">
           <img src={imageSource} alt={imageAlternative} />
         </div>
         <div>
@@ -52,12 +52,12 @@ const NewsModal: React.FC<NewsModalProps> = ({
             <h3 className="sm:w-[540px] w-[279px] text-zinc-800 h-[157px] sm:text-[32px] text-[24px] sm:mt-0 sm:mx-0 sm:mb-2 font-semibold font-IBM">
               {headline}
             </h3>
-            <p className="sm:w-[500px]  sm:block sm:h-[94px] text-zinc-800 sm:text-[15px] text-[14px] font-normal font-Poppins leading-normal">
+            <p className="sm:w-[500px]  sm:block sm:max-h-[94px] max-h-[162px] text-zinc-800 sm:text-[15px] text-[14px] font-normal font-Poppins leading-normal">
               {description}
             </p>
           </div>
 
-          <div className="sm:flex sm:gap-[9px] sm:mt-[30px] sm:flex-row flex-col gap-[8px]">
+          <div className="sm:flex sm:gap-[9px] sm:mt-[30px] sm:flex-row flex-col gap-[4px]">
             <p className="h-5 text-zinc-800 text-[13px] font-normal font-Poppins leading-snu ">
               {pubishedAt}{" "}
             </p>

@@ -7,7 +7,7 @@ import TopNewsType from "../../interfaces/TopNewsType";
 import ShowMoreButton from "../ShowMore";
 import { formatTimeDifference } from "./Time";
 
-export default function NewsSection() {
+const NewsSection =()=> {
   const { articles, error } = useAppSelector((state: RootState) => state.news);
   const dispatch = useAppDispatch();
   const [showMore, setShowMore] = useState<boolean>(false);
@@ -48,3 +48,5 @@ export default function NewsSection() {
     </div>
   );
 }
+
+export default NewsSection;

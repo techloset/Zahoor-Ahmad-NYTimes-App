@@ -3,7 +3,7 @@ import { BookMark, HeartOutline, ShareIcon } from "../assets/SVGs/Icons";
 import { useState } from "react";
 import NewsModal from "./news/NewsModal";
 
-export default function TopStory({
+const TopStory: React.FC<NewsProps> = ({
   _id,
   headline,
   description,
@@ -11,7 +11,7 @@ export default function TopStory({
   pubishedAt,
   byLine,
   imageAlternative,
-}: NewsProps) {
+}: NewsProps) => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
 
   const openModal = () => {
@@ -86,4 +86,6 @@ export default function TopStory({
       />
     </div>
   );
-}
+};
+
+export default TopStory;
