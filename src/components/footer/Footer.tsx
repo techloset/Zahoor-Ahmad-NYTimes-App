@@ -36,7 +36,7 @@ const Footer = () => {
           <li>Careers</li>
           <li>Coupons</li>
         </ul>
-        <div className="flex sm:gap-[51.43px] gap-[30px] my-[30px] sm:justify-end justify-center">
+        <div className="flex sm:gap-[51.43px] gap-[30px] py-[30px] sm:justify-end justify-center">
           <RssIcon />
           <TwitterIcon />
           <RedditIcon />

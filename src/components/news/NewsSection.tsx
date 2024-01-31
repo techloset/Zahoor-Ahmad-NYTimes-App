@@ -7,7 +7,7 @@ import TopNewsType from "../../interfaces/TopNewsType";
 import ShowMoreButton from "../ShowMore";
 import { formatTimeDifference } from "./Time";
 
-const NewsSection =()=> {
+const NewsSection = () => {
   const { articles, error } = useAppSelector((state: RootState) => state.news);
   const dispatch = useAppDispatch();
   const [showMore, setShowMore] = useState<boolean>(false);
@@ -37,16 +37,17 @@ const NewsSection =()=> {
               imageSource={article.multimedia[0]?.url}
               imageAlternative={article.multimedia[0].format}
               pubishedAt={formatTimeDifference(article.published_date)}
-              // pubishedAt={article.published_date.split("T")[0]}
             />
           ))}
         </div>
-        <div className="text-center my-4">
-          <ShowMoreButton onClick={toggleShowMore} isShowingMore={showMore} />
-        </div>
+        {visibleArticles.length === 10 && (
+          <div className="text-center my-4">
+            <ShowMoreButton onClick={toggleShowMore} isShowingMore={showMore} />
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default NewsSection;

@@ -37,6 +37,42 @@ export const StartIcon = () => {
   );
 };
 
+export const Loader = () => {
+  return (
+    <svg
+      width="100"
+      height="100"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMidYMid"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+        stroke="#000000"
+        stroke-width="4"
+        stroke-linecap="round"
+        fill="none"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          dur="2s"
+          from="0"
+          to="502"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="stroke-dasharray"
+          dur="2s"
+          values="150.6 100.4;1 250;150.6 100.4"
+          repeatCount="indefinite"
+        />
+      </circle>
+    </svg>
+  );
+};
+
 export const GridDisplay = () => {
   return (
     <svg

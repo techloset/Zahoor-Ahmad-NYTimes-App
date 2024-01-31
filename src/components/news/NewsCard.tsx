@@ -25,7 +25,6 @@ const NewsCard: React.FC<NewsProps> = ({
   return (
     <div>
       <div className="sm:h-[520px] sm:w-[438px] flex flex-col rounded-lg shadow-custom hover:shadow-hover">
-        {/* <div className="sm:h-[520px] sm:w-[438px] flex flex-col rounded-lg shadow-black/15 hover:shadow-black/20 shadow-md hover:shadow-lg border-black-2"> */}
         <div className="sm:w-[438px] sm:h-[246px] h-[210px] overflow-hidden sm:mb-3.125rem rounded-t-lg">
           <img
             src={imageSource}

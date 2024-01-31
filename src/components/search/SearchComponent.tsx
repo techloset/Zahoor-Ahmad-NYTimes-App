@@ -7,14 +7,6 @@ interface SearchComponentProps {
   searchTerm: (searchTerm: string) => void;
 }
 
-// const SearchComponent: React.FC<SearchComponentProps> = ({ searchTerm }) => {
-//   const [search, setSearch] = useState<string>("");
-
-//   const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
-//     e.preventDefault();
-//     searchTerm(search);
-//   };
-
 const SearchComponent: React.FC<SearchComponentProps> = ({ searchTerm }) => {
   const [search, setSearch] = useState<string>("");
   const dispatch = useAppDispatch();
@@ -26,7 +18,6 @@ const SearchComponent: React.FC<SearchComponentProps> = ({ searchTerm }) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setSearch(e.target.value);
-    // Dispatch the action to update searchTerm in the Redux state
     dispatch(updateSearchTerm(e.target.value));
   };
 
@@ -44,10 +35,6 @@ const SearchComponent: React.FC<SearchComponentProps> = ({ searchTerm }) => {
           type="text"
           placeholder="Corona Virus Updates"
           value={search}
-          // onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-          //   e.preventDefault();
-          //   setSearch(e.target.value);
-          // }}
           onChange={handleInputChange}
         />
         <div className="h-[24px] w-[24px] stroke-[0.5px] cursor-pointer">

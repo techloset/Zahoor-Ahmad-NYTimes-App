@@ -17,24 +17,6 @@ const initialState: SearchNewsState = {
   searchTerm: "elections",
 };
 
-// export const fetchSearchArticles = createAsyncThunk(
-//   "searchNews/fetchSearchArticles",
-//   async () => {
-//     try {
-//       const response = await axios.get<{
-//         response: { results: { docs: ArticleSearchType[] } };
-//       }>(
-//         `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${
-//           initialState.searchTerm
-//         }&api-key=${import.meta.env.VITE_API_KEY}`
-//       );
-//       return response.data.response.results.docs;
-//     } catch (error) {
-//       throw new Error("Failed to fetch search articles");
-//     }
-//   }
-// );
-
 export const fetchSearchArticles = createAsyncThunk(
   "searchNews/fetchSearchArticles",
   async (_, { getState }) => {
@@ -49,7 +31,6 @@ export const fetchSearchArticles = createAsyncThunk(
           import.meta.env.VITE_API_KEY
         }`
       );
-      console.log("axios response", response.data.response.docs);
       return response.data.response.docs;
     } catch (error) {
       throw new Error("Failed to fetch search articles");
