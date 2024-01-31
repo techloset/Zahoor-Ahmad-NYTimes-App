@@ -40,11 +40,9 @@ const NewsSection = () => {
             />
           ))}
         </div>
-        {visibleArticles.length === 10 && (
-          <div className="text-center my-4">
-            <ShowMoreButton onClick={toggleShowMore} isShowingMore={showMore} />
-          </div>
-        )}
+        <div className="text-center my-4">
+          <ShowMoreButton onClick={toggleShowMore} isShowingMore={showMore} />
+        </div>
       </div>
     </div>
   );
