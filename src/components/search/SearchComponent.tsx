@@ -1,7 +1,7 @@
 import React, { useState, FormEvent } from "react";
 import { SearchIcon } from "../../assets/SVGs/Icons";
-import { useAppDispatch } from "../../App/hooks";
-import { updateSearchTerm } from "../../features/search/searchSlice";
+import { useAppDispatch } from "../../Hooks/hooks";
+import { updateSearchTerm } from "../../store/slices/searchSlice/searchSlice";
 
 interface SearchComponentProps {
   searchTerm: (searchTerm: string) => void;

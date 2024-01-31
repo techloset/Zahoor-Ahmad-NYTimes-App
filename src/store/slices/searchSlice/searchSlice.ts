@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import ArticleSearchType from "../../interfaces/ArticleSearchType";
 import { RootState } from "../../store";
+import ArticleSearchType from "../../../interfaces/ArticleSearchType";
 
 export interface SearchNewsState {
   searchArticles: ArticleSearchType[];
@@ -22,7 +22,7 @@ export const fetchSearchArticles = createAsyncThunk(
   async (_, { getState }) => {
     try {
       const state = getState() as RootState;
-      const searchTerm = state.searchNews.searchTerm;
+      const searchTerm = state.searchNews.searchTerm
 
       const response = await axios.get<{
         response: { docs: ArticleSearchType[] };

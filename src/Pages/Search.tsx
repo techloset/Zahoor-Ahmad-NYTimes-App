@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import SearchComponent from "../components/search/SearchComponent";
-import { fetchSearchArticles } from "../features/search/searchSlice";
-import { useAppDispatch, useAppSelector } from "../App/hooks";
-import { RootState } from "../store";
+import { RootState } from "../store/store";
+import { useAppDispatch, useAppSelector } from "../Hooks/hooks";
 import ArticleSearchType from "../interfaces/ArticleSearchType";
 import NewsCard from "../components/news/NewsCard";
 import { formatTimeDifference } from "../components/news/Time";
 import { Loader } from "../assets/SVGs/Icons";
+import { fetchSearchArticles } from "../store/slices/searchSlice/searchSlice";
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState<string>("");

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { fetchArticles } from "../../features/news/newsSlice";
-import { useAppSelector, useAppDispatch } from "../../App/hooks";
 import NewsCard from "./NewsCard";
-import { RootState } from "../../store";
 import TopNewsType from "../../interfaces/TopNewsType";
 import ShowMoreButton from "../ShowMore";
 import { formatTimeDifference } from "./Time";
+import { useAppDispatch, useAppSelector } from "../../Hooks/hooks";
+import { RootState } from "../../store/store";
+import { fetchArticles } from "../../store/slices/newsSlice/newsSlice";
 
 const NewsSection = () => {
   const { articles, error } = useAppSelector((state: RootState) => state.news);

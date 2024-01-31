@@ -1,10 +1,10 @@
 // newsSlice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import TopNews from "../../interfaces/TopNewsType";
+import TopNewsType from "../../../interfaces/TopNewsType";
 
 export interface NewsState {
-  articles: TopNews[];
+  articles: TopNewsType[];
   status: "idle" | "loading" | "succeeded" | "failed";
   error: string | undefined | null;
 }
@@ -18,7 +18,7 @@ const initialState: NewsState = {
 export const fetchArticles = createAsyncThunk(
   "news/fetchArticles",
   async () => {
-    const response = await axios.get<{ results: TopNews[] }>(
+    const response = await axios.get<{ results: TopNewsType[] }>(
       `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${
         import.meta.env.VITE_API_KEY
       }`
@@ -38,7 +38,7 @@ const newsSlice = createSlice({
       })
       .addCase(
         fetchArticles.fulfilled,
-        (state, action: PayloadAction<TopNews[]>) => {
+        (state, action: PayloadAction<TopNewsType[]>) => {
           state.status = "succeeded";
           state.articles = action.payload;
         }
