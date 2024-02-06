@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import SearchComponent from "../components/search/SearchComponent";
 import { RootState } from "../store/store";
 import { useAppDispatch, useAppSelector } from "../Hooks/hooks";
-import ArticleSearchType from "../interfaces/ArticleSearchType";
+import ArticleSearchType from "../types/ArticleSearchType";
 import NewsCard from "../components/news/NewsCard";
 import { formatTimeDifference } from "../components/news/Time";
 import { Loader } from "../assets/SVGs/Icons";
@@ -39,10 +39,12 @@ function Search() {
           console.log(searchTerm);
         }}
       />
-      <div className="h-54 p-[24px] sm:mx-[277px] text-zinc-800 text-lg font-semibold font-Poppins">
-        <h1>Search Results</h1>
-        <div className="bg-red-700 w-[57px] h-[5px] sm:hidden"></div>
-      </div>
+      {searchArticles.length === 0 || (
+        <div className="h-54 p-[24px] sm:mx-[277px] text-zinc-800 text-lg font-semibold font-Poppins">
+          <h1>Search Results</h1>
+          <div className="bg-red-700 w-[57px] h-[5px] sm:hidden"></div>
+        </div>
+      )}
 
       {status === "loading" && (
         <div className="flex justify-center mt-8 min-h-[50vh]">

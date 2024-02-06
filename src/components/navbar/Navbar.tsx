@@ -5,7 +5,7 @@ import {
   SearchIcon,
   UserProfile,
 } from "../../assets/SVGs/Icons";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/Logo.png";
 
 const Navbar = () => {
   return (

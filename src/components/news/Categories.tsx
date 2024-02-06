@@ -1,6 +1,7 @@
 import { GridDisplay } from "../../assets/SVGs/Icons";
 
 const Categories = () => {
+  
   return (
     <div className="sm:w-[1366px] sm:h-[54px] h-[83px] w-full p-[14px]">
       <div className="bg-white bg-opacity-90 flex justify-between">

@@ -1,5 +1,5 @@
 import React from "react";
-import NewsProps from "../../interfaces/NewsType";
+import NewsProps from "../../types/NewsType";
 import {
   BookMark,
   CrossIcon,

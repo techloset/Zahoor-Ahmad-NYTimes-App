@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import NewsCard from "./NewsCard";
-import TopNewsType from "../../interfaces/TopNewsType";
+import TopNewsType from "../../types/TopNewsType";
 import ShowMoreButton from "../ShowMore";
 import { formatTimeDifference } from "./Time";
 import { useAppDispatch, useAppSelector } from "../../Hooks/hooks";

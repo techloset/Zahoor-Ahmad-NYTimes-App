@@ -4,7 +4,7 @@ import {
   RssIcon,
   TwitterIcon,
 } from "../../assets/SVGs/Icons";
-import footerLogo from "../../assets/footer-logo.png";
+import footerLogo from "../../assets/FooterLogo.png";
 
 const Footer = () => {
   return (
