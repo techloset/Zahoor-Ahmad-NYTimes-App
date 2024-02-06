@@ -5,7 +5,7 @@ import {
   SearchIcon,
   UserProfile,
 } from "../../assets/SVGs/Icons";
-import logo from "../../assets/Logo.png";
+import Logo from "../../assets/Logo.png";
 
 const Navbar = () => {
   return (
@@ -16,7 +16,7 @@ const Navbar = () => {
             <Link to="/">
               <img
                 className="sm:h-[52px] sm:w-[62.79px] h-[40px] w-[49.33px]"
-                src={logo}
+                src={Logo}
                 alt="logo"
               />
             </Link>
