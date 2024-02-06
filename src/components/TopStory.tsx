@@ -23,10 +23,10 @@ const TopStory: React.FC<NewsProps> = ({
   };
 
   return (
-    <div className="hover:cursor-pointer sm:mt-[100px] max-w-[1366px] ">
+    <div className="hover:cursor-pointer  ">
       <div
         onClick={openModal}
-        className="min-h-[500px] flex flex-col sm:flex-row sm:gap-[76px] max-w-[1366px] "
+        className="flex flex-col sm:mt-[100px] sm:flex-row sm:gap-[76px] max-w-[1366px] "
       >
         <div className="hover:cursor-pointer sm:max-w-750px sm:min-w-750px sm:max-h-[500px] h-[456px] w-full overflow-hidden hidden sm:block">
           <img src={imageSource} alt={imageAlternative} />

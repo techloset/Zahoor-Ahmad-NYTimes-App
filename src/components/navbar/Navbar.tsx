@@ -8,6 +8,15 @@ import {
 import Logo from "../../assets/Logo.png";
 
 const Navbar = () => {
+  const navbarList: string[] = [
+    "Politics",
+    "Business",
+    "Sports",
+    "World",
+    "Travel",
+    "Podcast",
+  ];
+
   return (
     <div className="flex justify-center relative z-[100px]">
       <div className="w-full font-Nunito text-[16px] bg-white sm:h-20 bg-opacity-80 backdrop-blur-[28px] h-[80px] fixed top-0">
@@ -17,6 +26,7 @@ const Navbar = () => {
               <img
                 className="sm:h-[52px] sm:w-[62.79px] h-[40px] w-[49.33px]"
                 src={Logo}
+                // src={Logo}
                 alt="logo"
               />
             </Link>
@@ -27,12 +37,9 @@ const Navbar = () => {
                 <div className="h-[8px] w-[8px] bg-red-700 rounded-full"></div>
                 <span>Corona Updates</span>
               </li>
-              <li>Politics</li>
-              <li>Business</li>
-              <li>Sports</li>
-              <li>World</li>
-              <li>Travel</li>
-              <li>Podcast</li>
+              {navbarList.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
               <AngularBrackets />
             </ul>
             <UserProfile />
