@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import axios from "axios";
 import { RootState } from "../../store";
 import ArticleSearchType from "../../../types/ArticleSearchType";
+import searchInstance from "../../../utils/axiosInstances/searchInstance";
 
 export interface SearchNewsState {
   searchArticles: ArticleSearchType[];
@@ -23,14 +23,9 @@ export const fetchSearchArticles = createAsyncThunk(
     try {
       const state = getState() as RootState;
       const searchTerm = state.searchNews.searchTerm;
-
-      const response = await axios.get<{
+      const response = await searchInstance.get<{
         response: { docs: ArticleSearchType[] };
-      }>(
-        `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=${
-          import.meta.env.VITE_API_KEY
-        }`
-      );
+      }>(`${searchTerm}&api-key=${import.meta.env.VITE_API_KEY}`);
       return response.data.response.docs;
     } catch (error) {
       throw new Error("Failed to fetch search articles");

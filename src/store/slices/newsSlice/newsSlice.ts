@@ -1,7 +1,8 @@
 // newsSlice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import axios from "axios";
+// import axios from "axios";
 import TopNewsType from "../../../types/TopNewsType";
+import newsInstance from "../../../utils/axiosInstances/newsInstance";
 
 export interface NewsState {
   articles: TopNewsType[];
@@ -18,10 +19,8 @@ const initialState: NewsState = {
 export const fetchArticles = createAsyncThunk(
   "news/fetchArticles",
   async () => {
-    const response = await axios.get<{ results: TopNewsType[] }>(
-      `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${
-        import.meta.env.VITE_API_KEY
-      }`
+    const response = await newsInstance.get<{ results: TopNewsType[] }>(
+      `home.json?api-key=${import.meta.env.VITE_API_KEY}`
     );
     return response.data.results;
   }
