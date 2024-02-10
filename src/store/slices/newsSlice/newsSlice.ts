@@ -1,6 +1,4 @@
-// newsSlice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-// import axios from "axios";
 import TopNewsType from "../../../types/TopNewsType";
 import newsInstance from "../../../utils/axiosInstances/newsInstance";
 
@@ -18,11 +16,15 @@ const initialState: NewsState = {
 
 export const fetchArticles = createAsyncThunk(
   "news/fetchArticles",
-  async () => {
-    const response = await newsInstance.get<{ results: TopNewsType[] }>(
-      `home.json?api-key=${import.meta.env.VITE_API_KEY}`
-    );
-    return response.data.results;
+  async (selectedTerm: string) => {
+    try {
+      const response = await newsInstance.get<{ results: TopNewsType[] }>(
+        `${selectedTerm}.json?api-key=${import.meta.env.VITE_API_KEY}`
+      );
+      return response.data.results;
+    } catch (error) {
+      throw new Error("Failed to fetch articles");
+    }
   }
 );
 
@@ -33,13 +35,15 @@ const newsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchArticles.pending, (state) => {
+        state.error = null;
         state.status = "loading";
       })
       .addCase(
         fetchArticles.fulfilled,
         (state, action: PayloadAction<TopNewsType[]>) => {
           state.status = "succeeded";
-          state.articles = action.payload;
+          state.articles = action.payload.filter((article) => !!article.title);
+          state.error = null;
         }
       )
       .addCase(fetchArticles.rejected, (state, action) => {

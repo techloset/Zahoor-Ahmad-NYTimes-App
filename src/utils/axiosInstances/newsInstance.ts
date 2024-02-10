@@ -1,5 +1,7 @@
 import axios from "axios";
 
-export default axios.create({
+const newsInstance = axios.create({
   baseURL: "https://api.nytimes.com/svc/topstories/v2/",
 });
+
+export default newsInstance;

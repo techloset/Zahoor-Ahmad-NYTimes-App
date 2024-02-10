@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import { RootState } from "../store/store";
-import { useAppDispatch, useAppSelector } from "../Hooks/hooks";
-import { fetchArticles } from "../store/slices/newsSlice/newsSlice";
+import { useAppSelector } from "../Hooks/hooks";
 import NewsSection from "../components/news/NewsSection";
 import Categories from "../components/news/Categories";
 import BreakingNewsAlert from "../components/news/BreakingNewsAlert";
@@ -10,11 +8,7 @@ import TopStory from "../components/TopStory";
 
 export default function Home() {
   const { articles } = useAppSelector((state: RootState) => state.news);
-  const dispatch = useAppDispatch();
   const topNews = articles[0];
-  useEffect(() => {
-    dispatch(fetchArticles());
-  }, [dispatch]);
 
   return (
     <div className="flex items-center w-full justify-center flex-col">
@@ -24,8 +18,8 @@ export default function Home() {
           byLine={topNews?.byline}
           headline={topNews?.title}
           description={topNews?.abstract}
-          imageSource={topNews?.multimedia[0].url}
-          imageAlternative={topNews?.multimedia[0].format}
+          imageSource={topNews?.multimedia[0]?.url}
+          imageAlternative={topNews?.multimedia[0]?.format}
           key={topNews?._id}
           pubishedAt={formatTimeDifference(topNews?.published_date)}
         />

@@ -4,7 +4,6 @@ import { RootState } from "../store/store";
 import { useAppDispatch, useAppSelector } from "../Hooks/hooks";
 import ArticleSearchType from "../types/ArticleSearchType";
 import NewsCard from "../components/news/NewsCard";
-import { formatTimeDifference } from "../components/news/Time";
 import { Loader } from "../assets/SVGs/Icons";
 import { fetchSearchArticles } from "../store/slices/searchSlice/searchSlice";
 
@@ -15,7 +14,6 @@ function Search() {
   const { searchArticles, error, status } = useAppSelector(
     (state: RootState) => state.searchNews
   );
-
   useEffect(() => {
     const fetchData = async () => {
       if (searchTerm === "") return;
@@ -68,7 +66,7 @@ function Search() {
                 _id={article?._id}
                 description={article?.abstract || ""}
                 imageAlternative={article?.multimedia[0]?.crop_name || ""}
-                pubishedAt={formatTimeDifference(article?.pub_date) || ""}
+                pubishedAt={article?.pub_date.split("T")[0] || ""}
               />
             ))}
           </div>
