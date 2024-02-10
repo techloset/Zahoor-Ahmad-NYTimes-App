@@ -17,9 +17,9 @@ const NewsSection = () => {
 
   return (
     <div className="">
-      <div className="sm:max-w-[1920px] sm:mx-0 mx-[16px] sm:mb-[50px]">
+      <div className="sm:mb-12">
         {error && <div className="text-red-500 text-center">{error}</div>}
-        <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-[26px] gap-[16px]">
+        <div className="flex flex-wrap sm:gap-7 gap-4 justify-center">
           {visibleArticles?.map((article: TopNewsType) => (
             <NewsCard
               key={article._id}

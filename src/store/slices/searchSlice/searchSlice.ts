@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../../store";
+// import { RootState } from "../../store";
 import ArticleSearchType from "../../../types/ArticleSearchType";
 import searchInstance from "../../../utils/axiosInstances/searchInstance";
 
@@ -7,25 +7,25 @@ export interface SearchNewsState {
   searchArticles: ArticleSearchType[];
   status: "idle" | "loading" | "succeeded" | "failed";
   error: string | undefined | null;
-  searchTerm: string;
+  // searchTerm: string;
 }
 
 const initialState: SearchNewsState = {
   searchArticles: [],
   status: "idle",
   error: null,
-  searchTerm: "elections",
+  // searchTerm: "elections",
 };
 
 export const fetchSearchArticles = createAsyncThunk(
   "searchNews/fetchSearchArticles",
-  async (_, { getState }) => {
+  async (searchedArticle: string) => {
     try {
-      const state = getState() as RootState;
-      const searchTerm = state.searchNews.searchTerm;
+      // const state = getState() as RootState;
+      // const searchTerm = state.searchNews.searchTerm;
       const response = await searchInstance.get<{
         response: { docs: ArticleSearchType[] };
-      }>(`${searchTerm}&api-key=${import.meta.env.VITE_API_KEY}`);
+      }>(`${searchedArticle}&api-key=${import.meta.env.VITE_API_KEY}`);
       return response.data.response.docs;
     } catch (error) {
       throw new Error("Failed to fetch search articles");
@@ -36,11 +36,7 @@ export const fetchSearchArticles = createAsyncThunk(
 const searchNewsSlice = createSlice({
   name: "searchNews",
   initialState,
-  reducers: {
-    updateSearchTerm: (state, action: PayloadAction<string>) => {
-      state.searchTerm = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
 
@@ -60,7 +56,5 @@ const searchNewsSlice = createSlice({
       });
   },
 });
-
-export const { updateSearchTerm } = searchNewsSlice.actions;
 
 export default searchNewsSlice.reducer;

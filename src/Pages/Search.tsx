@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import SearchComponent from "../components/search/SearchComponent";
 import { RootState } from "../store/store";
 import { useAppDispatch, useAppSelector } from "../Hooks/hooks";
@@ -6,19 +6,21 @@ import ArticleSearchType from "../types/ArticleSearchType";
 import NewsCard from "../components/news/NewsCard";
 import { Loader } from "../assets/SVGs/Icons";
 import { fetchSearchArticles } from "../store/slices/searchSlice/searchSlice";
+import { useSearchParams } from "react-router-dom";
 
 function Search() {
-  const [searchTerm, setSearchTerm] = useState<string>("");
   const dispatch = useAppDispatch();
-
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchTerm = searchParams.get("q") || "";
   const { searchArticles, error, status } = useAppSelector(
     (state: RootState) => state.searchNews
   );
+
   useEffect(() => {
     const fetchData = async () => {
       if (searchTerm === "") return;
       try {
-        await dispatch(fetchSearchArticles());
+        await dispatch(fetchSearchArticles(searchTerm));
       } catch (error) {
         console.error("Search Page", "Error fetching data:", error);
       }
@@ -32,15 +34,12 @@ function Search() {
   return (
     <div className="w-full ">
       <SearchComponent
-        searchTerm={(searchTerm: string) => {
-          setSearchTerm(searchTerm);
-          console.log(searchTerm);
-        }}
+        searchTerm={(searchTerm: string) => setSearchParams({ q: searchTerm })}
       />
       {searchArticles.length === 0 || (
-        <div className="h-54 p-[24px] sm:mx-[277px] text-zinc-800 text-lg font-semibold font-Poppins">
+        <div className="h-54 p-6 sm:mx-[277px] text-zinc-800 text-lg font-semibold font-Poppins">
           <h1>Search Results</h1>
-          <div className="bg-red-700 w-[57px] h-[5px] sm:hidden"></div>
+          <div className="bg-red-700 w-14 h-1.5 sm:hidden"></div>
         </div>
       )}
 

@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <div className="flex items-center w-full justify-center flex-col">
-      <div className="pb-[30px] md:mx-[277px] w-full sm:mx-[100px] max-w-[1920px] flex gap-0 sm:gap-[50px] flex-col items-center">
+      <div className="pb-8 w-full sm:max-w-[1920px] sm:mx-14 md:max-w-[1649px] flex gap-0 sm:gap-12 flex-col items-center">
         <TopStory
           _id={topNews?._id}
           byLine={topNews?.byline}

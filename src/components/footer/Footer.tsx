@@ -8,10 +8,10 @@ import footerLogo from "../../assets/FooterLogo.png";
 
 const Footer = () => {
   return (
-    <footer className="sm:flex  w-full sm:h-[290px] min-h-[290px] bg-slate-900 mb-0 justify-center">
+    <footer className="sm:flex sm:flex-wrap  w-full sm:h-[290px] min-h-[290px] bg-slate-900 mb-0 justify-center">
       <div className="sm:mr-[188px] mr-[94px]">
         <img
-          className="sm:ml-[448px] ml-[154px] sm:pt-[79px] pt-[20px] sm:mb-[41px] mb-[7px]"
+          className="sm:ml-[448px] mx-auto sm:pt-[79px] pt-[20px] sm:mb-[41px] mb-[7px]"
           src={footerLogo}
           alt="Footer Logo"
           height="66px"

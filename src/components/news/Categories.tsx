@@ -25,7 +25,6 @@ const Categories = () => {
           category = "home";
           break;
       }
-      console.log(category, "Clicked");
       dispatch(fetchArticles(category));
     } catch (error) {
       console.error("Error occurred:", error);
@@ -37,7 +36,7 @@ const Categories = () => {
   }, [dispatch]);
 
   return (
-    <div className="sm:w-[1366px] sm:h-[54px] h-[83px] w-full p-[14px]">
+    <div className="sm:max-w-[1366px] sm:h-[54px] h-[83px] w-full p-[14px]">
       <div className="bg-white bg-opacity-90 flex justify-between">
         <div className="flex sm:gap-[40px] gap-[16px]">
           {categoriesList.map((item, index) => (

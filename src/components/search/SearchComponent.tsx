@@ -1,7 +1,6 @@
 import React, { useState, FormEvent } from "react";
 import { SearchIcon } from "../../assets/SVGs/Icons";
-import { useAppDispatch } from "../../Hooks/hooks";
-import { updateSearchTerm } from "../../store/slices/searchSlice/searchSlice";
+// import { useSearchParams } from "react-router-dom";
 
 interface SearchComponentProps {
   searchTerm: (searchTerm: string) => void;
@@ -9,16 +8,17 @@ interface SearchComponentProps {
 
 const SearchComponent: React.FC<SearchComponentProps> = ({ searchTerm }) => {
   const [search, setSearch] = useState<string>("");
-  const dispatch = useAppDispatch();
+  // const [, setSearchParams] = useSearchParams();
+
   const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     searchTerm(search);
+    // setSearchParams({ q: search });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setSearch(e.target.value);
-    dispatch(updateSearchTerm(e.target.value));
   };
 
   return (
