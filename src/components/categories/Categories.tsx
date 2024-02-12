@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useAppDispatch } from "../../Hooks/hooks";
+import { useAppDispatch } from "../../store/Hooks/hooks";
 import { GridDisplay } from "../../assets/SVGs/Icons";
 import { fetchArticles } from "../../store/slices/newsSlice/newsSlice";
 

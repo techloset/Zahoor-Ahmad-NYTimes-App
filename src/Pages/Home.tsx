@@ -1,10 +1,10 @@
 import { RootState } from "../store/store";
-import { useAppSelector } from "../Hooks/hooks";
-import NewsSection from "../components/news/NewsSection";
-import Categories from "../components/news/Categories";
-import BreakingNewsAlert from "../components/news/BreakingNewsAlert";
-import { formatTimeDifference } from "../components/news/Time";
-import TopStory from "../components/TopStory";
+import { useAppSelector } from "../store/Hooks/hooks";
+import NewsSection from "../components/newsSection/NewsSection";
+import Categories from "../components/categories/Categories";
+import BreakingNewsAlert from "../components/breakingNewsAlert/BreakingNewsAlert";
+import { formatTimeDifference } from "../utils/Time";
+import TopStory from "../components/topStory/TopStory";
 
 export default function Home() {
   const { articles } = useAppSelector((state: RootState) => state.news);

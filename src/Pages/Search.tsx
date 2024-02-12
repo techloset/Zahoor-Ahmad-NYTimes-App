@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import SearchComponent from "../components/search/SearchComponent";
+import SearchComponent from "../components/searchComponent/SearchComponent";
 import { RootState } from "../store/store";
-import { useAppDispatch, useAppSelector } from "../Hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../store/Hooks/hooks";
 import ArticleSearchType from "../types/ArticleSearchType";
-import NewsCard from "../components/news/NewsCard";
+import NewsCard from "../components/newsCard/NewsCard";
 import { Loader } from "../assets/SVGs/Icons";
 import { fetchSearchArticles } from "../store/slices/searchSlice/searchSlice";
 import { useSearchParams } from "react-router-dom";

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import NewsCard from "./NewsCard";
+import NewsCard from "../newsCard/NewsCard";
 import TopNewsType from "../../types/TopNewsType";
-import ShowMoreButton from "../ShowMore";
-import { formatTimeDifference } from "./Time";
-import { useAppSelector } from "../../Hooks/hooks";
+import ShowMoreButton from "../showMore/ShowMore";
+import { formatTimeDifference } from "../../utils/Time";
+import { useAppSelector } from "../../store/Hooks/hooks";
 import { RootState } from "../../store/store";
 
 const NewsSection = () => {

@@ -1,7 +1,7 @@
-import NewsProps from "../types/NewsType";
-import { BookMark, HeartOutline, ShareIcon } from "../assets/SVGs/Icons";
+import NewsProps from "../../types/NewsType";
+import { BookMark, HeartOutline, ShareIcon } from "../../assets/SVGs/Icons";
 import { useState } from "react";
-import NewsModal from "./news/NewsModal";
+import NewsModal from "../newsModal/NewsModal";
 
 const TopStory: React.FC<NewsProps> = ({
   _id,
