@@ -2,9 +2,9 @@ import BreakingNewsAlert from "../../components/breakingNewsAlert/BreakingNewsAl
 import Categories from "../../components/categories/Categories";
 import NewsSection from "../../components/newsSection/NewsSection";
 import TopStory from "../../components/topStory/TopStory";
-import { useAppSelector } from "../../store/Hooks/hooks";
+import { useAppSelector } from "../../store/hooks/hooks";
 import { RootState } from "../../store/store";
-import { formatTimeDifference } from "../../utils/Time";
+import { formatTimeDifference } from "../../utils/time";
 
 export default function Home() {
   const { articles } = useAppSelector((state: RootState) => state.news);

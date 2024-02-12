@@ -7,6 +7,13 @@ import {
 import footerLogo from "../../assets/FooterLogo.png";
 
 const Footer = () => {
+  const list1 = [
+    "Privacy Policy",
+    "Do not sell my personal info",
+    "Terms of Service",
+    "nbcnews.com Site Map",
+  ];
+  const list2 = ["About", "Contact", "Careers", "Coupons"];
   return (
     <footer className="sm:flex sm:flex-wrap  w-full sm:h-[290px] min-h-[290px] bg-slate-900 mb-0 justify-center">
       <div className="sm:mr-[188px] mr-[94px]">
@@ -23,18 +30,16 @@ const Footer = () => {
       </div>
       <div className="w-[221px] h-[116px] text-white text-[15px] font-medium font-Poppins leading-loose tracking-tight mr-[148px] mt-[80px] hidden sm:block">
         <ul>
-          <li>Privacy Policy</li>
-          <li>Do not sell my personal info</li>
-          <li>Terms of Service</li>
-          <li>nbcnews.com Site Map</li>
+          {list1.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
         </ul>
       </div>
       <div className="text-white text-[15px] font-medium font-Poppins leading-loose tracking-tight sm:mr-[392px] sm:mt-[80px] mt-[15px]">
         <ul className="flex sm:gap-6 flex-col sm:flex-row sm:w-full w-screen text-center">
-          <li>About</li>
-          <li>Contact</li>
-          <li>Careers</li>
-          <li>Coupons</li>
+          {list2.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
         </ul>
         <div className="flex sm:gap-[51.43px] gap-[30px] py-[30px] sm:justify-end justify-center">
           <RssIcon />

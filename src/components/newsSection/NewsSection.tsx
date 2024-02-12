@@ -1,8 +1,8 @@
 import { useState } from "react";
 import NewsCard from "../newsCard/NewsCard";
 import ShowMoreButton from "../showMore/ShowMore";
-import { formatTimeDifference } from "../../utils/Time";
-import { useAppSelector } from "../../store/Hooks/hooks";
+import { formatTimeDifference } from "../../utils/time";
+import { useAppSelector } from "../../store/hooks/hooks";
 import { RootState } from "../../store/store";
 import { TopNewsType } from "../../types/Types";
 

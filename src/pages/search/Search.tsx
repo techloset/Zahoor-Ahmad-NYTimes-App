@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../store/Hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import { RootState } from "../../store/store";
 import { fetchSearchArticles } from "../../store/slices/searchSlice";
 import SearchComponent from "../../components/searchComponent/SearchComponent";
