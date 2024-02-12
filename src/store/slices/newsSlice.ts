@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import TopNewsType from "../../../types/TopNewsType";
-import newsInstance from "../../../utils/axiosInstances/newsInstance";
+import axiosInstance from "../../utils/axiosInstances/axiosInstance";
+import { TopNewsType } from "../../types/Types";
 
 export interface NewsState {
   articles: TopNewsType[];
@@ -18,8 +18,10 @@ export const fetchArticles = createAsyncThunk(
   "news/fetchArticles",
   async (selectedTerm: string) => {
     try {
-      const response = await newsInstance.get<{ results: TopNewsType[] }>(
-        `${selectedTerm}.json?api-key=${import.meta.env.VITE_API_KEY}`
+      const response = await axiosInstance.get<{ results: TopNewsType[] }>(
+        `topstories/v2/${selectedTerm}.json?api-key=${
+          import.meta.env.VITE_API_KEY
+        }`
       );
       return response.data.results;
     } catch (error) {

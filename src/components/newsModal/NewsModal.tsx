@@ -1,11 +1,11 @@
 import React from "react";
-import NewsProps from "../../types/NewsType";
 import {
   BookMark,
   CrossIcon,
   HeartOutline,
   ShareIcon,
 } from "../../assets/SVGs/Icons";
+import { NewsProps } from "../../types/Types";
 
 interface NewsModalProps extends NewsProps {
   isOpen: boolean;

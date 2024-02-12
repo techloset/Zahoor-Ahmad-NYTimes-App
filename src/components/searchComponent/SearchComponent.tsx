@@ -1,19 +1,16 @@
 import React, { useState, FormEvent } from "react";
 import { SearchIcon } from "../../assets/SVGs/Icons";
-// import { useSearchParams } from "react-router-dom";
 
-interface SearchComponentProps {
+type SearchComponentProps = {
   searchTerm: (searchTerm: string) => void;
-}
+};
 
 const SearchComponent: React.FC<SearchComponentProps> = ({ searchTerm }) => {
   const [search, setSearch] = useState<string>("");
-  // const [, setSearchParams] = useSearchParams();
 
   const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     searchTerm(search);
-    // setSearchParams({ q: search });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

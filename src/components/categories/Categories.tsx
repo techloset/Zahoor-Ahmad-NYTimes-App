@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch } from "../../store/Hooks/hooks";
 import { GridDisplay } from "../../assets/SVGs/Icons";
-import { fetchArticles } from "../../store/slices/newsSlice/newsSlice";
+import { fetchArticles } from "../../store/slices/newsSlice";
 
 const Categories = () => {
   const dispatch = useAppDispatch();

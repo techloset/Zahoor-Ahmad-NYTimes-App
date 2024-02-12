@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import NewsProps from "../../types/NewsType";
 import { BookMark, HeartOutline, ShareIcon } from "../../assets/SVGs/Icons";
 import NewsModal from "../newsModal/NewsModal";
+import { NewsProps } from "../../types/Types";
 
 const NewsCard: React.FC<NewsProps> = ({
   _id,
