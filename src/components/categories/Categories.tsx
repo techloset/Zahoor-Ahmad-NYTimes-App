@@ -50,7 +50,7 @@ const Categories = () => {
                 {item}
               </h1>
               {clickedIndex === index && (
-                <div className="w-10 h-0.5 opacity-90 border-red-700 border rounded-sm" />
+                <div className="w-10 h-0.5 opacity-90 bg-red-700" />
               )}
             </div>
           ))}
