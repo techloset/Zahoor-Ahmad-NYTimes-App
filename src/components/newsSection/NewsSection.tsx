@@ -22,14 +22,14 @@ const NewsSection = () => {
         <div className="flex flex-wrap sm:gap-7 gap-4 justify-center">
           {visibleArticles?.map((article: TopNewsType) => (
             <NewsCard
-              key={article._id}
-              _id={article._id}
-              byLine={article.byline}
-              headline={article.title}
-              description={article.abstract}
-              imageSource={article.multimedia[0]?.url}
-              imageAlternative={article.multimedia[0].format}
-              pubishedAt={formatTimeDifference(article.published_date)}
+              key={article?._id}
+              _id={article?._id}
+              byLine={article?.byline}
+              headline={article?.title}
+              description={article?.abstract}
+              imageSource={article?.multimedia[0]?.url}
+              imageAlternative={article?.multimedia[0]?.format}
+              pubishedAt={formatTimeDifference(article?.published_date)}
             />
           ))}
         </div>

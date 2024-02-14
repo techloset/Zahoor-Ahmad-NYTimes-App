@@ -1,5 +1,6 @@
 import BreakingNewsAlert from "../../components/breakingNewsAlert/BreakingNewsAlert";
 import Categories from "../../components/categories/Categories";
+import EditorsPicks from "../../components/editorsPicks/EditorsPicks";
 import NewsSection from "../../components/newsSection/NewsSection";
 import TopStory from "../../components/topStory/TopStory";
 import { useAppSelector } from "../../store/hooks/hooks";
@@ -26,6 +27,7 @@ export default function Home() {
         <BreakingNewsAlert />
         <Categories />
         <NewsSection />
+        <EditorsPicks />
       </div>
     </div>
   );
