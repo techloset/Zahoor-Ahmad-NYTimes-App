@@ -13,7 +13,6 @@ const NewsSection = () => {
   const toggleShowMore = () => {
     setShowMore(!showMore);
   };
-  console.log("Articles:", articles);
 
   return (
     <div className="">

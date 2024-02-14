@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { StartIcon } from "../../assets/SVGs/Icons";
 import { useAppSelector } from "../../store/hooks/hooks";
-// import { fetchArticles } from "../../store/slices/newsSlice";
 import { RootState } from "../../store/store";
 import EditorsPicksCards from "../editorsPicsCards/EditorsPicksCards";
 
@@ -25,7 +24,7 @@ const EditorsPicks = () => {
   return (
     <div className="w-full sm:max-w-[1366px] mx-[16px]">
       <div className="w-full text-left flex gap-[14px] items-center ">
-        <h1 className="text-[18px] font-semibold font-Poppins ">
+        <h1 className="text-[18px] font-semibold font-Poppins mx-[16px] ">
           Editor’s Picks
         </h1>
         <StartIcon />
