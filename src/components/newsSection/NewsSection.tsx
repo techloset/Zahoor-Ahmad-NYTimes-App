@@ -15,7 +15,7 @@ const NewsSection = () => {
   };
 
   return (
-    <div className="">
+    <div className="mx-[16px]">
       <div className="sm:mb-12">
         {error && <div className="text-red-500 text-center">{error}</div>}
         <div className="flex flex-wrap sm:gap-7 gap-4 justify-center">
