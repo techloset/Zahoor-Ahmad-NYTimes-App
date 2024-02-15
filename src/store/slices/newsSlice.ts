@@ -44,7 +44,9 @@ const newsSlice = createSlice({
         fetchArticles.fulfilled,
         (state, action: PayloadAction<TopNewsType[]>) => {
           state.status = "succeeded";
-          state.articles = action.payload.filter((article) => !!article.title);
+          state.articles = action.payload.filter(
+            (article) => !!article._id || !!article.multimedia
+          );
           state.error = null;
         }
       )

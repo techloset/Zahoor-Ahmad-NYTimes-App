@@ -23,10 +23,10 @@ const NewsCard: React.FC<NewsProps> = ({
   };
 
   return (
-    <div>
+    <div >
       <div
         onClick={openModal}
-        className="cursor-pointer sm:h-[520px] sm:w-[438px] flex flex-col rounded-lg shadow-custom hover:shadow-hover"
+        className="z-0 cursor-pointer sm:h-[520px] sm:w-[438px] flex flex-col rounded-lg shadow-custom hover:shadow-hover"
       >
         <div className="sm:w-[438px] sm:h-[246px] h-[210px] overflow-hidden sm:mb-3.125rem rounded-t-lg">
           <img
@@ -45,7 +45,7 @@ const NewsCard: React.FC<NewsProps> = ({
             </p>
           </div>
           <div className="flex sm:gap-[5px] ml-[26px] mb-[20px] gap-1 ">
-            <p className="sm:w-[94px] h-5 min-w-[94px] text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snu">
+            <p className="sm:w-[94px] h-5 min-w-[94px] text-zinc-800 sm:text-[13px] font-normal font-Poppins leading-snug">
               {pubishedAt}
             </p>
             <p className="sm:h-5 opacity-70 text-zinc-800 text-[13px] font-normal font-Poppins leading-snug">
