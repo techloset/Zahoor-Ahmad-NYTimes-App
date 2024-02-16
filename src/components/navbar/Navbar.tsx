@@ -18,10 +18,10 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="flex w-[1920px] justify-center relative">
-      <div className="w-full font-Nunito text-[16px] bg-white sm:h-20 bg-opacity-80 backdrop-blur-[28px] h-20 fixed top-0">
+    <div className="flex justify-center relative z-50">
+      <div className="w-full font-Nunito text-4 bg-white sm:h-20 bg-opacity-80 backdrop-blur-[28px] h-20 fixed top-0">
         <nav className="flex my-3.5 items-center sm:justify-center justify-between mx-6">
-          <div className="md:mr-36 sm:mr-24 ">
+          <div className="sm:mr-32">
             <Link to="/">
               <img
                 className="sm:h-14 sm:w-16 h-10 w-12"
