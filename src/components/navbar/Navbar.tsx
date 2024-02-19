@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-center relative z-50">
       <div className="w-full font-Nunito text-4 bg-white sm:h-20 bg-opacity-80 backdrop-blur-[28px] h-20 fixed top-0">
-        <nav className="flex my-3.5 items-center sm:justify-center justify-between mx-6">
+        <nav className="flex my-3.5 items-center sm:justify-evenly justify-between sm:mx-auto mx-6 sm:w-[1366px] ">
           <div className="sm:mr-32">
             <Link to="/">
               <img
@@ -31,7 +31,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="flex sm:gap-10 gap-3.5 items-center justify-evenly">
-            <ul className="w-[48rem] sm:flex hidden gap-10  sm:gap-5 h-6 items-center">
+            <ul className="w-[893px] sm:flex hidden justify-between  sm:gap-5 h-6 items-center">
               <li className="flex gap-1 items-center">
                 <div className="h-2 w-2 bg-red-700 rounded-full"></div>
                 <span>Corona Updates</span>
@@ -41,7 +41,7 @@ const Navbar = () => {
               ))}
               <AngularBrackets />
             </ul>
-            <div className="flex gap-5 items-center">
+            <div className="flex sm:w-[144px] justify-between items-center">
               <UserProfile />
               <Link to="/search">
                 <SearchIcon />
