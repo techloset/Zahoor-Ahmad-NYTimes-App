@@ -15,37 +15,37 @@ const Footer = () => {
   ];
   const list2 = ["About", "Contact", "Careers", "Coupons"];
   return (
-    <footer className="sm:flex sm:flex-wrap  w-full sm:h-[290px] min-h-[290px] bg-slate-900 mb-0 justify-center">
-      <div className="sm:mr-[188px] mr-[94px]">
-        <img
-          className="sm:ml-[448px] mx-auto sm:pt-[79px] pt-[20px] sm:mb-[41px] mb-[7px]"
-          src={footerLogo}
-          alt="Footer Logo"
-          height="66px"
-          width="66px"
-        />
-        <p className="sm:ml-[395px] ml-[94px] text-white text-xs font-normal font-Poppins leading-[25.20px] tracking-tight sm:pb-[64px] pb-[15px]">
-          copyright © 2024 | NBC NEWS
-        </p>
-      </div>
-      <div className="w-[221px] h-[116px] text-white text-[15px] font-medium font-Poppins leading-loose tracking-tight mr-[148px] mt-[80px] hidden sm:block">
-        <ul>
-          {list1.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      </div>
-      <div className="text-white text-[15px] font-medium font-Poppins leading-loose tracking-tight sm:mr-[392px] sm:mt-[80px] mt-[15px]">
-        <ul className="flex sm:gap-6 flex-col sm:flex-row sm:w-full w-screen text-center">
-          {list2.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-        <div className="flex sm:gap-[51.43px] gap-[30px] py-[30px] sm:justify-end justify-center">
-          <RssIcon />
-          <TwitterIcon />
-          <RedditIcon />
-          <FBIcon />
+    <footer className="w-full sm:h-[250px] flex justify-center items-center h-[290px] bg-slate-900">
+      <div className="flex flex-wrap flex-col sm:flex-row justify-between items-center sm:w-[1133px] sm:h-[117px] min-h-[222px] w-[184px]">
+        <div className="flex flex-col sm:w-[189px] sm:h-[107px] h-[73px] sm:justify-between justify-center items-center">
+          <div className="sm:h-[66px] w-[66px] h-10">
+            <img src={footerLogo} alt="Footer Logo" />
+          </div>
+          <p className="text-white text-xs font-normal font-Poppins opacity-50">
+            copyright {<span>&#169;</span>} 2020 | NBC NEWS
+          </p>
+        </div>
+        <div className="w-[221px] sm:h-[116px] h-[83px] text-white text-[15px] font-medium font-Poppins hidden sm:block">
+          <ul className="leading-8">
+            {list1.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="text-white text-[15px] flex flex-col gap-[30px] justify-start font-medium font-Poppins sm:h-[90px]">
+          <ul className="flex sm:justify-between sm:w-[387px] flex-col mt-[7px] sm:mt-0 sm:h-[32px] sm:flex-row w-full text-center">
+            {list2.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+          <div className="flex w-full justify-end h-[28px]">
+            <div className="flex sm:w-[266px] w-[189px] justify-between">
+              <RssIcon />
+              <TwitterIcon />
+              <RedditIcon />
+              <FBIcon />
+            </div>
+          </div>
         </div>
       </div>
     </footer>
