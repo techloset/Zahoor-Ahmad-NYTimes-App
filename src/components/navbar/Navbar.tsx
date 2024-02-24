@@ -31,7 +31,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="flex sm:gap-10 gap-3.5 items-center justify-evenly">
-            <ul className="w-[893px] sm:flex hidden justify-between  sm:gap-5 h-6 items-center">
+            <ul className="w-[893px] sm:flex hidden justify-between h-6 items-center">
               <li className="flex gap-1 items-center">
                 <div className="h-2 w-2 bg-red-700 rounded-full"></div>
                 <span>Corona Updates</span>
