@@ -41,7 +41,7 @@ const Navbar = () => {
               ))}
               <AngularBrackets />
             </ul>
-            <div className="flex sm:w-[144px] justify-between items-center">
+            <div className="flex sm:w-[144px] justify-between items-center gap-[14px]">
               <UserProfile />
               <Link to="/search">
                 <SearchIcon />
