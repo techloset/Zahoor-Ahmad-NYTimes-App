@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import { RootState } from "../../store/store";
@@ -7,6 +7,7 @@ import SearchComponent from "../../components/searchComponent/SearchComponent";
 import { Loader } from "../../assets/SVGs/Icons";
 import NewsCard from "../../components/newsCard/NewsCard";
 import { ArticleSearchType } from "../../types/Types";
+import ShowMoreButton from "../../components/showMore/ShowMore";
 // import { formatTimeDifference } from "../../utils/time";
 
 function Search() {
@@ -31,6 +32,13 @@ function Search() {
     }, 200);
     return () => clearTimeout(unsubscribe);
   }, [dispatch, searchTerm]);
+  const [showMore, setShowMore] = useState<boolean>(false);
+  const visibleArticles = showMore
+    ? searchArticles
+    : searchArticles.slice(1, 10);
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
+  };
 
   return (
     <div className="w-full bg-white ">
@@ -43,21 +51,18 @@ function Search() {
           <div className="bg-red-700 w-14 h-1.5 sm:hidden"></div>
         </div>
       )}
-
       {status === "loading" && (
         <div className="flex justify-center mt-8 min-h-[50vh]">
           <Loader />
         </div>
       )}
-
       {status === "failed" && (
         <div className="text-red-500 text-center mt-8">{error}</div>
       )}
-
       {status === "succeeded" && (
         <div className="flex justify-center">
           <div className="mx-4 grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-4 my-5">
-            {searchArticles.map((article: ArticleSearchType) => (
+            {visibleArticles.map((article: ArticleSearchType) => (
               <NewsCard
                 key={article?._id}
                 byLine={
@@ -83,6 +88,11 @@ function Search() {
               />
             ))}
           </div>
+        </div>
+      )}
+      {searchArticles.length >= 11 && (
+        <div className="text-center my-4">
+          <ShowMoreButton onClick={toggleShowMore} isShowingMore={showMore} />
         </div>
       )}
     </div>

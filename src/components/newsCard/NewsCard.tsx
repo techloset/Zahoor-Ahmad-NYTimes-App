@@ -28,7 +28,7 @@ const NewsCard: React.FC<NewsProps> = ({
         onClick={openModal}
         className="z-0 cursor-pointer sm:h-[520px] sm:w-[438px] flex flex-col bg-white rounded-lg shadow-custom hover:shadow-hover"
       >
-        <div className="sm:w-[438px] sm:h-[246px] h-[210px] w-[343px] overflow-hidden sm:mb-3.125rem rounded-t-lg">
+        <div className="sm:w-[438px] sm:h-[246px] h-[210px] w-[343px] overflow-hidden rounded-t-lg">
           {(imageSource && (
             <img
               src={imageSource}
@@ -43,12 +43,12 @@ const NewsCard: React.FC<NewsProps> = ({
         </div>
         <div>
           <div className="flex flex-col sm:gap-[17px] sm:mb-[15px] sm:px-[25px] px-[19px] py-[10px]">
-            <h3 className="hover:cursor-pointer sm:w-[388px] sm:h-[45px] text-lg text-zinc-800 sm:text-lg font-semibold font-IBM leading-[27px] overflow-x-hidden">
+            <h3 className="hover:cursor-pointer sm:w-[388px] sm:h-[45px] text-lg text-zinc-800 sm:text-lg font-semibold font-IBM leading-[27px] overflow-x-clip">
               {headline && headline.length > 80
                 ? headline.slice(0, 80) + "..."
                 : headline}
             </h3>
-            <p className="sm:max-w-[500px] sm:h-[94px] text-zinc-800 sm:text-[15px] font-normal font-Nunito leading-normal overflow-x-hidden text-wrap">
+            <p className="sm:max-w-[500px] sm:h-[94px] text-zinc-800 sm:text-[15px] font-normal font-Nunito leading-normal overflow-x-clip text-wrap">
               {description && description?.length > 260
                 ? description.slice(0, 260) + "..."
                 : description}
