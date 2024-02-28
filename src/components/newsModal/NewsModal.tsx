@@ -34,10 +34,10 @@ const NewsModal: React.FC<NewsModalProps> = ({
         >
           <CrossIcon />
         </div>
-        <div className="sm:max-w-[750px] sm:min-w-[750px] sm:max-h-[500px] w-[279px] sm:min-h-[500px] max-h-[347px] min-h-[347px] overflow-clip">
+        <div className="sm:w-[750px] sm:h-[500px] w-[279px] h-[347px] min-h-[347px] overflow-clip">
           <img
             src={imageSource}
-            alt={imageAlternative}
+            alt={imageAlternative || "News Image"}
             className="h-[347px] w-[279px] sm:h-[750px] sm:w-[750px] object-cover"
           />
         </div>

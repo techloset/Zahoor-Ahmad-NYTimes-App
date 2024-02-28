@@ -3,6 +3,7 @@ import { StartIcon } from "../../assets/SVGs/Icons";
 import { useAppSelector } from "../../store/hooks/hooks";
 import { RootState } from "../../store/store";
 import EditorsPicksCards from "../editorsPicsCards/EditorsPicksCards";
+import SingleDiv from "../editorsPicksIcon/editorsPicksIcon";
 
 const EditorsPicks = () => {
   const { articles } = useAppSelector((state: RootState) => state.news);
@@ -13,6 +14,18 @@ const EditorsPicks = () => {
     articles[totalArticles - 1],
     articles[totalArticles - 2],
   ];
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleClick = (index: number) => {
+    setActiveIndex(index);
+  };
+  const divs = Array.from({ length: 4 }, (_, index) => (
+    <SingleDiv
+      key={index}
+      initialValue={activeIndex === index}
+      onClick={() => handleClick(index)}
+    />
+  ));
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 425);
@@ -24,12 +37,12 @@ const EditorsPicks = () => {
   return (
     <div className="w-full sm:max-w-[1366px] m-4">
       <div className="w-full text-left flex gap-3.5 items-center ">
-        <h1 className="text-[18px] font-semibold font-Poppins mx-[16px] ">
+        <h1 className="text-[18px] font-semibold font-Poppins mx-9 my-6 leading-[27px] ">
           Editor’s Picks
         </h1>
         <StartIcon />
       </div>
-      <div className="flex justify-between flex-row flex-wrap">
+      <div className="flex justify-between flex-row flex-wrap mx-4">
         {EditorsPicksArticles.map((article, index) => (
           <div
             key={article?._id}
@@ -47,7 +60,9 @@ const EditorsPicks = () => {
           </div>
         ))}
       </div>
-      <div></div>
+      <div className="sm:flex sm:justify-between w-[121px] h-1 mt-[30px] mx-auto hidden">
+        {divs}
+      </div>
     </div>
   );
 };
