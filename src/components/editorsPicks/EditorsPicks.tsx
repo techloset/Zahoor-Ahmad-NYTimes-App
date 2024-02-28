@@ -22,8 +22,8 @@ const EditorsPicks = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <div className="w-full sm:max-w-[1366px] mx-[16px]">
-      <div className="w-full text-left flex gap-[14px] items-center ">
+    <div className="w-full sm:max-w-[1366px] m-4">
+      <div className="w-full text-left flex gap-3.5 items-center ">
         <h1 className="text-[18px] font-semibold font-Poppins mx-[16px] ">
           Editor’s Picks
         </h1>
@@ -47,6 +47,7 @@ const EditorsPicks = () => {
           </div>
         ))}
       </div>
+      <div></div>
     </div>
   );
 };

@@ -19,7 +19,7 @@ export type NewsProps = {
   headline: string;
   description?: string;
   imageSource?: string;
-  pubishedAt?: string;
+  pubishedAt: string;
   byLine: string;
   imageAlternative?: string;
 };

@@ -12,7 +12,7 @@ export default function Home() {
   const topNews = articles[0];
 
   return (
-    <div className="flex items-center w-full justify-center flex-col">
+    <div className="flex items-center w-full justify-center bg-white flex-col">
       <div className="pb-8 w-full sm:max-w-[1920px] md:max-w-[1649px] flex gap-0 sm:gap-12 flex-col items-center">
         <TopStory
           _id={topNews?._id}

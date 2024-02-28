@@ -7,6 +7,7 @@ import SearchComponent from "../../components/searchComponent/SearchComponent";
 import { Loader } from "../../assets/SVGs/Icons";
 import NewsCard from "../../components/newsCard/NewsCard";
 import { ArticleSearchType } from "../../types/Types";
+// import { formatTimeDifference } from "../../utils/time";
 
 function Search() {
   const dispatch = useAppDispatch();
@@ -32,7 +33,7 @@ function Search() {
   }, [dispatch, searchTerm]);
 
   return (
-    <div className="w-full ">
+    <div className="w-full bg-white ">
       <SearchComponent
         searchTerm={(searchTerm: string) => setSearchParams({ q: searchTerm })}
       />
@@ -55,17 +56,30 @@ function Search() {
 
       {status === "succeeded" && (
         <div className="flex justify-center">
-          <div className="mx-[15px] grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-[26px] gap-[16px] my-[20px]">
+          <div className="mx-4 grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-4 my-5">
             {searchArticles.map((article: ArticleSearchType) => (
               <NewsCard
                 key={article?._id}
-                byLine={article?.byline?.original || ""}
-                headline={article?.headline?.main || ""}
+                byLine={
+                  article?.byline?.original &&
+                  article?.byline?.original.length > 36
+                    ? article?.byline?.original.slice(0, 36) + "..."
+                    : article?.byline?.original || ""
+                }
+                headline={
+                  article?.headline?.main.length > 80
+                    ? article?.headline?.main.slice(0, 80) + "..."
+                    : article.headline.main || ""
+                }
                 imageSource={`https://nytimes.com/${article?.multimedia[0]?.url}`}
                 _id={article?._id}
-                description={article?.abstract || ""}
+                description={
+                  article?.abstract.length > 260
+                    ? article?.abstract.slice(0, 260) + "..."
+                    : article.abstract || ""
+                }
                 imageAlternative={article?.multimedia[0]?.crop_name || ""}
-                pubishedAt={article?.pub_date.split("T")[0] || ""}
+                pubishedAt={article?.pub_date.split("T")[0].toString() || ""}
               />
             ))}
           </div>
