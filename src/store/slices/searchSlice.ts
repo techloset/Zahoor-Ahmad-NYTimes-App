@@ -49,7 +49,7 @@ const searchNewsSlice = createSlice({
           state.status = "succeeded";
           state.searchArticles = action.payload.filter(
             (article: ArticleSearchType) =>
-              !!article._id || !!article.multimedia
+              !!article._id || !!article.multimedia || !!article.headline
           );
           state.error = null;
         }

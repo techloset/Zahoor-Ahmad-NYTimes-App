@@ -30,7 +30,7 @@ const NewsModal: React.FC<NewsModalProps> = ({
       <div className="sm:p-12 px-6 py-[35px] sm:rounded-[20px] rounded-[10px] max-h-[846px] sm:h-[596px] flex flex-col sm:flex-row sm:gap-[76px] relative bg-white w-[327px] sm:w-[1462px]">
         <div
           onClick={closeModal}
-          className="hover:cursor-pointer h-4 w-4 absolute sm:top-4 top-2 right-2 sm:right-5"
+          className="hover:cursor-pointer h-4 w-4 absolute sm:top-4 top-2 right-3 sm:right-5"
         >
           <CrossIcon />
         </div>
