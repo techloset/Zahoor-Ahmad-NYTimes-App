@@ -26,7 +26,7 @@ const NewsModal: React.FC<NewsModalProps> = ({
     return null;
   }
   return (
-    <div className="w-full h-[calc(100%-5rem)] flex justify-center items-center z-50 bg-black/40 fixed top-20  left-0">
+    <div className="w-full sm:h-[calc(100%-5rem)] h-[calc(100%-5.1rem)] flex justify-center items-center z-50 bg-black/40 fixed top-20  left-0">
       <div className="sm:p-12 px-6 py-[35px] sm:rounded-[20px] rounded-[10px] max-h-[846px] sm:h-[596px] flex flex-col sm:flex-row sm:gap-[76px] relative bg-white w-[327px] sm:w-[1462px]">
         <div
           onClick={closeModal}

@@ -41,7 +41,7 @@ function Search() {
   };
 
   return (
-    <div className="w-full bg-white ">
+    <div className="w-full bg-[#F1F2F3]">
       <SearchComponent
         searchTerm={(searchTerm: string) => setSearchParams({ q: searchTerm })}
       />
